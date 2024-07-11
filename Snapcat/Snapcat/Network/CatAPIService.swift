@@ -30,7 +30,7 @@ class CatAPIService: CatAPI {
 	
 	func fetchCatDetail(id: String) -> AnyPublisher<Cat, NetworkError> {
 		var urlComponents = URLComponents(string: "https://cataas.com/cat/\(id)")
-		let testParameters = CatQueryParameters(json:true)
+		let testParameters = CatQueryParameters(json: true)
 		urlComponents?.queryItems = testParameters.toQueryItems()
 		
 		guard let url = urlComponents?.url else {

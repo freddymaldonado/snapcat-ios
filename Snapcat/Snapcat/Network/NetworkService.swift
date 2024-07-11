@@ -15,9 +15,18 @@ enum NetworkError: Error, Equatable {
 	var errorDescription: String {
 		switch self {
 			case .badURL(let reason):
-				return "Bad URL: \(reason)"
+				return "\(reason)"
 			case .requestFailed(let reason):
-				return "Request failed: \(reason)"
+				return "\(reason)"
+		}
+	}
+	
+	func adding(_ info: String) -> NetworkError {
+		switch self {
+			case .badURL(let reason):
+				return .badURL(reason: info + " " + reason)
+			case .requestFailed(let reason):
+				return .requestFailed(reason: info + " " + reason)
 		}
 	}
 }
@@ -27,8 +36,19 @@ protocol NetworkService {
 }
 
 class URLSessionNetworkService: NetworkService {
+	
+	init() {
+		let cacheSizeMemory = 50 * 1024 * 1024
+		let cacheSizeDisk = 100 * 1024 * 1024
+		let cache = URLCache(memoryCapacity: cacheSizeMemory, diskCapacity: cacheSizeDisk, diskPath: "snapcatCache")
+		URLCache.shared = cache
+	}
+	
 	func fetch<T: Decodable>(url: URL) -> AnyPublisher<T, NetworkError> {
-		URLSession.shared.dataTaskPublisher(for: url)
+		var request = URLRequest(url: url)
+		request.cachePolicy = .returnCacheDataElseLoad
+		
+		return URLSession.shared.dataTaskPublisher(for: request)
 			.map { $0.data }
 			.decode(type: T.self, decoder: JSONDecoder())
 			.mapError { error in NetworkError.requestFailed(reason: error.localizedDescription) }

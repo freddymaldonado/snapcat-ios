@@ -10,12 +10,17 @@ import SwiftUI
 
 struct CatInfoView: View {
 	@EnvironmentObject var theme: CatThemeManager
-	var details: [CatInfoRow]
+	@ObservedObject var viewModel: CatInfoViewModel
 	
 	var body: some View {
 		Section(header: Text("Info")) {
-			ForEach(details, id: \.title) { detail in
-				CatInfoRowView(title: detail.title, value: detail.value)
+			ForEach(viewModel.details, id: \.title) { detail in
+				CatInfoRowView(
+					viewModel: CatInfoRowViewModel(
+						title: detail.title,
+						value: detail.value
+					)
+				)
 			}
 		}
 		.listRowBackground(Color.clear)

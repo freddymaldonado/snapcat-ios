@@ -56,7 +56,7 @@ class CatListViewModelSpec: QuickSpec {
 				}
 				
 				it("updates cats array") {
-					let cats = [Cat(id: "1", tags: [], owner: "", createdAt: Date(), updatedAt: Date(), mimeType: "", size: 1)]
+					let cats = [Cat(id: "1", tags: [], owner: "", createdAt: Date(), updatedAt: Date(), mimeType: "", size: 1, cachedFileName: nil)]
 					mockFetchCatsSuccess(with: cats)
 					expect(viewModel.cats).toEventually(equal(cats))
 				}

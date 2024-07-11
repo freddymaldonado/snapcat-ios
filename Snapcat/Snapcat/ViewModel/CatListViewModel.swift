@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import SwiftUI
 
-class CatListViewModel: ObservableObject {
+class CatListViewModel: CatListViewModelProtocol {
 	@Published var cats: [Cat] = []
 	@Published var isLoading = false
 	@Published var error: NetworkError?
@@ -23,17 +23,35 @@ class CatListViewModel: ObservableObject {
 	}
 	
 	func fetchCats() {
+		CatAnalyticsManager.startTrace(trace: .catListLoad)
+		CatAnalyticsManager.setValue("loading",
+									 forAttribute: "fetch_cats",
+									 onTrace: .catListLoad)
 		isLoading = true
 		repository.fetchCats()
 			.receive(on: DispatchQueue.main)
 			.sink(receiveCompletion: { [weak self] completion in
-				self?.isLoading = false
-				if case .failure(let error) = completion {
-					self?.error = error
+				guard let self = self else { return }
+				DispatchQueue.main.async {
+					self.isLoading = false
+					if case .failure(let error) = completion {
+						self.error = error
+						CatAnalyticsManager.setValue(error.errorDescription,
+													 forAttribute: "fetch_cats",
+													 onTrace: .catListLoad)
+					}
+					CatAnalyticsManager.stopTrace(trace: .catListLoad)
 				}
 			}, receiveValue: { [weak self] cats in
-				self?.isLoading = false
-				self?.cats = cats
+				guard let self = self else { return }
+				DispatchQueue.main.async {
+					self.isLoading = false
+					self.cats = cats
+					CatAnalyticsManager.setValue("success, fetched \(cats.count) cats",
+												 forAttribute: "fetch_cats",
+												 onTrace: .catListLoad)
+					CatAnalyticsManager.stopTrace(trace: .catListLoad)
+				}
 			})
 			.store(in: &cancellables)
 	}

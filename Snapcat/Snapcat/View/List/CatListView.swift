@@ -10,7 +10,7 @@ import SDWebImageSwiftUI
 
 struct CatListView: View {
 	@EnvironmentObject var theme: CatThemeManager
-	@ObservedObject var viewModel = CatListViewModel()
+	@ObservedObject var viewModel: CatListViewModel
 	
 	var body: some View {
 		NavigationView {
@@ -21,20 +21,18 @@ struct CatListView: View {
 						GridItem(.flexible(), spacing: theme.baseSpacing)
 					], spacing: theme.baseSpacing) {
 						ForEach(viewModel.cats) { cat in
-							if let url = cat.contentURL {
 								GeometryReader { geometry in
-									NavigationLink(destination: CatDetailView(catId: cat.id)) {
+									NavigationLink(destination: CatDetailView(viewModel: CatDetailViewModel(catId: cat.id))) {
 										CatGridItem(
-											cat: cat,
-											imageURL: url,
-											size: geometry.size.width
+											viewModel: CatGridItemViewModel(
+												size: geometry.size.width,
+												cat: cat)
 										)
-										.environmentObject(viewModel)
+										.accessibleLabel("This is a Cat \(cat.isGif ? "animated image" : "image") with the following tags: \(cat.previewTags ?? "No Tags"), double Tap in a Cat to show details")
 									}
 									.buttonStyle(CatAnimatedButtonStyle())
 								}
 								.aspectRatio(1, contentMode: .fit)
-							}
 						}
 					}
 					.padding()
@@ -42,10 +40,18 @@ struct CatListView: View {
 			}
 			.coordinateSpace(name: "pullToRefresh")
 			.navigationTitle("Cats")
+			.navigationBarTitleDisplayMode(.large)
 			.background(theme.backgroundColor)
-			.navigationBarItems(trailing: NavigationLink(destination: CatSettingsView()) {
+			.navigationBarItems(
+				trailing: NavigationLink(destination:
+				CatSettingsView(
+					viewModel: CatSettingsViewModel(
+						isDarkMode: theme.isDarkMode)
+				)) {
 				Image(systemName: "gearshape.fill")
+					.setAccessibilityIdentifier("Settings")
 					.foregroundColor(theme.tintColor)
+					.accessibleLabel("This is the settings button, from settings you can delete the cache, double tap to open")
 			})
 		}
 		.accentColor(theme.tintColor)

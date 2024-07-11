@@ -6,12 +6,19 @@
 //
 
 import Foundation
+import RealmSwift
 
 class AppRepository {
 	static let shared: CatRepository = {
+		let realm = try! Realm()
 		let networkService = URLSessionNetworkService()
-		let localService = CatAPIService(networkService: networkService)
+		let localService = CatLocalService(networkService: networkService)
 		let apiService = CatAPIService(networkService: networkService)
-		return CatRepositoryImpl(localService: localService, apiService: apiService)
+		
+		return CatRepositoryImpl(
+			localService: localService,
+			apiService: apiService,
+			realm: realm
+		)
 	}()
 }

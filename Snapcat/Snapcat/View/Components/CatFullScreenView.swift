@@ -11,16 +11,14 @@ import SDWebImageSwiftUI
 
 struct CatFullScreenView: View {
 	@EnvironmentObject var theme: CatThemeManager
-	let imageURL: URL?
-	
 	@Environment(\.presentationMode) var presentationMode
-	@State private var isShareSheetPresented = false
+	@ObservedObject var viewModel: CatFullScreenViewModel
 	
 	var body: some View {
 		VStack {
 			HStack {
 				Button(action: {
-					presentationMode.wrappedValue.dismiss()
+					viewModel.dismissView(presentationMode)
 				}) {
 					Image(systemName: "xmark")
 						.foregroundColor(.white)
@@ -35,7 +33,7 @@ struct CatFullScreenView: View {
 			
 			Spacer()
 			
-			if let url = imageURL {
+			if let url = viewModel.imageURL {
 				WebImage(url: url) { image in
 					image
 				} placeholder: {
@@ -47,7 +45,7 @@ struct CatFullScreenView: View {
 				.ignoresSafeArea()
 				.overlay(
 					Button(action: {
-						isShareSheetPresented = true
+						viewModel.shareImage()
 					}) {
 						Image(systemName: "square.and.arrow.up")
 							.foregroundColor(.white)
@@ -58,8 +56,8 @@ struct CatFullScreenView: View {
 						.padding(),
 					alignment: .bottomTrailing
 				)
-				.sheet(isPresented: $isShareSheetPresented, content: {
-					CatShareSheet(activityItems: [url])
+				.sheet(isPresented: $viewModel.isShareSheetPresented, content: {
+					CatShareSheetView(activityItems: [url])
 				})
 			}
 			

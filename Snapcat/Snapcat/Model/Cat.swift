@@ -15,13 +15,26 @@ struct Cat: Identifiable, Equatable {
 	let updatedAt: Date?
 	let mimeType: String?
 	let size: Int?
-	
+	let cachedFileName: String?
+
 	var isGif: Bool {
 		mimeType == "image/gif"
 	}
 	
 	var contentURL: URL? {
-		URL(string: "https://cataas.com/cat/\(id)")
+		if let cachedFileName = cachedFileName {
+			let fileManager = FileManager.default
+			guard let cachesDirectory = fileManager.urls(
+				for: .documentDirectory, 
+				in: .userDomainMask
+			).first else {
+				return nil
+			}
+			
+			return cachesDirectory.appendingPathComponent(cachedFileName)
+		} else {
+			return URL(string: "https://cataas.com/cat/\(id)")
+		}
 	}
 	
 	var previewTags: String? {
@@ -71,5 +84,6 @@ extension Cat: Decodable {
 		
 		mimeType = (try? container.decode(String.self, forKey: .mimeType))
 		size = (try? container.decode(Int.self, forKey: .size))
+		cachedFileName = nil
 	}
 }

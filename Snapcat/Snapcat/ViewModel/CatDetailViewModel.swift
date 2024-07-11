@@ -9,31 +9,54 @@ import Foundation
 import Combine
 import SwiftUI
 
-class CatDetailViewModel: ObservableObject {
-	@Published var cat: Cat?
+class CatDetailViewModel: CatDetailViewModelProtocol {
+	@Published var cat: Cat? = nil
 	@Published var isLoading = false
-	@Published var error: NetworkError?
+	@Published var detailError: NetworkError?
+	@Published var isFullScreenImagePresented = false
+	@Published var contentError: NetworkError?
 	
 	private var cancellables = Set<AnyCancellable>()
 	private let repository: CatRepository
+	private var catId: String
 	
-	init(catId: String, repository: CatRepository = AppRepository.shared) {
+	init(isFullScreenImagePresented: Bool = false, contentError: NetworkError? = nil, catId: String, repository: CatRepository = AppRepository.shared) {
 		self.repository = repository
+		self.catId = catId
+	}
+	
+	func handleData(){
 		fetchCatDetail(id: catId, parameters: nil)
 	}
 	
 	func fetchCatDetail(id: String, parameters: CatQueryParameters?) {
+		CatAnalyticsManager.startTrace(trace: .catDetailsLoad)
+		CatAnalyticsManager.setValue("loading",
+									 forAttribute: "fetch_cat_detail",
+									 onTrace: .catDetailsLoad)
 		isLoading = true
 		repository.fetchCatDetail(id: id)
 			.receive(on: DispatchQueue.main)
 			.sink(receiveCompletion: { [weak self] completion in
-				self?.isLoading = false
-				if case .failure(let error) = completion {
-					self?.error = error
+				guard let self = self else { return }
+				DispatchQueue.main.async {
+					self.isLoading = false
+					if case .failure(let error) = completion {
+						self.detailError = error
+						CatAnalyticsManager.setValue(error.errorDescription,
+													 forAttribute: "fetch_cat_detail",
+													 onTrace: .catDetailsLoad)
+					}
+					CatAnalyticsManager.stopTrace(trace: .catDetailsLoad)
 				}
 			}, receiveValue: { [weak self] cat in
-				self?.isLoading = false
-				self?.cat = cat
+				guard let self = self else { return }
+				DispatchQueue.main.async {
+					self.isLoading = false
+					self.cat = cat
+					CatAnalyticsManager.setValue(self.accessibleCatDetails.joined(separator: " "),forAttribute: "fetch_cat_detail", onTrace: .catDetailsLoad)
+					CatAnalyticsManager.stopTrace(trace: .catDetailsLoad)
+				}
 			})
 			.store(in: &cancellables)
 	}
@@ -50,6 +73,11 @@ class CatDetailViewModel: ObservableObject {
 	
 	var tags: [String]? {
 		return cat?.tags
+	}
+	
+	var accessibleTags: [String] {
+		guard let tags = tags else { return [] }
+		return tags.map { $0 }
 	}
 	
 	private var size: String? {
@@ -104,5 +132,9 @@ class CatDetailViewModel: ObservableObject {
 		}
 		
 		return details
+	}
+	
+	var accessibleCatDetails: [String] {
+		return catDetails.map { $0.accessibilityLabel }
 	}
 }

@@ -7,47 +7,26 @@
 
 import Foundation
 import SwiftUI
-import SDWebImageSwiftUI
-
-import SwiftUI
 
 struct CatSettingsView: View {
 	@EnvironmentObject var themeManager: CatThemeManager
-	@State private var isAlertPresented = false
-	
-	func clearCache() {
-		SDImageCachesManager.shared.clear(with: .all)
-		isAlertPresented = true
-	}
+	@ObservedObject var viewModel: CatSettingsViewModel
 	
 	var body: some View {
 		List {
 			Section(header: Text("Appearance")) {
-				Toggle(isOn: Binding(
-					get: { themeManager.currentTheme == .darkTheme },
-					set: { newValue in
-						themeManager.switchTheme(to: newValue ? .darkTheme : .lightTheme)
-					}
-				)) {
-					Text("Dark Mode")
+				Toggle(isOn: $viewModel.isDarkMode) {
+					Text(viewModel.isDarkMode ? "Dark Mode" : "Light Mode")
 						.foregroundColor(themeManager.tintColor)
 				}
+				.setAccessibilityIdentifier("ThemeToggle")
 				.toggleStyle(SwitchToggleStyle(tint: themeManager.tintColor))
-			}
-			
-			Section(header: Text("Cache")) {
-				Button(action: clearCache) {
-					Text("Clear Cache")
-						.foregroundColor(themeManager.tintColor)
+				.onChange(of: viewModel.isDarkMode) {
+					themeManager.switchTheme(to: viewModel.isDarkMode ? .darkTheme : .lightTheme)
 				}
 			}
-		}
-		.alert(isPresented: $isAlertPresented) {
-			Alert(
-				title: Text("Cache Cleared"),
-				message: Text("The cache has been successfully cleared."),
-				dismissButton: .default(Text("OK"))
-			)
+			.combineAccessibilityElements()
+			.accessibleLabel("This is a switch where you can toogle dark or light mode")
 		}
 		.navigationTitle("Settings")
 		.navigationBarTitleDisplayMode(.inline)

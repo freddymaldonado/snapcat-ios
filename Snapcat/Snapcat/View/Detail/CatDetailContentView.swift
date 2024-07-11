@@ -10,25 +10,30 @@ import SwiftUI
 
 struct CatDetailContentView: View {
 	@EnvironmentObject var theme: CatThemeManager
-	@Binding var isFullScreenImagePresented: Bool
-	@State private var error: Bool = false
-	var contentUrl: URL?
+	@ObservedObject var viewModel: CatDetailContentViewModel
 	
 	var body: some View {
 		Section(header: Text("Content")) {
-			if let url = contentUrl {
 				ZStack {
 					CatMediaView(
-						error: $error,
-						url: url,
-						size: nil,
-						playbackMode: .bounce,
-						scaledToFit: true
-					).onTapGesture {
-						isFullScreenImagePresented = true
+						viewModel: CatMediaViewModel(
+							cat: nil,
+							error: $viewModel.error,
+							url: viewModel.contentUrl,
+							size: nil,
+							playbackMode: .bounce,
+							scaledToFit: true
+						)
+					)
+					.onTapGesture {
+						viewModel.handleOnTap()
 					}
-					.fullScreenCover(isPresented: $isFullScreenImagePresented) {
-						CatFullScreenView(imageURL: url)
+					.fullScreenCover(isPresented: $viewModel.isFullScreenImagePresented) {
+						CatFullScreenView(
+							viewModel: CatFullScreenViewModel(
+								imageURL: viewModel.contentUrl
+							)
+						)
 					}
 					
 					VStack {
@@ -36,8 +41,8 @@ struct CatDetailContentView: View {
 						HStack {
 							Spacer()
 							CatContentView(
-								content: .icon(
-									Image(systemName: "eye.fill")
+								viewModel: CatContentViewModel(
+									content: .icon(Image(systemName: "eye.fill"))
 								)
 							)
 						}
@@ -45,7 +50,8 @@ struct CatDetailContentView: View {
 					.padding(theme.basePadding * 3)
 					.allowsHitTesting(false)
 				}
-			}
-		}.listRowBackground(Color.clear)
+		}
+		.listRowBackground(Color.clear)
+		.listRowSeparator(.hidden)
 	}
 }

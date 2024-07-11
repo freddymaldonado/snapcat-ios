@@ -9,46 +9,73 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct CatDetailView: View {
-	@EnvironmentObject var theme: CatThemeManager
-	@ObservedObject private var viewModel: CatDetailViewModel
-	@State private var isFullScreenImagePresented = false
-	
-	init(catId: String) {
-		viewModel = CatDetailViewModel(catId: catId)
-	}
+	@ObservedObject var viewModel: CatDetailViewModel
+	@EnvironmentObject private var theme: CatThemeManager
 	
 	var body: some View {
 		VStack {
-			if let error = viewModel.error {
-				CatErrorView(
-					error: error
-				)
-			} else if viewModel.isLoading {
+			if viewModel.isLoading {
 				ProgressView()
 					.tint(theme.tintColor)
 			} else {
 				List {
-					CatDetailContentView(
-						isFullScreenImagePresented: $isFullScreenImagePresented,
-						contentUrl: viewModel.contentUrl
-					)
-					.accessibility(identifier: "CatDetailContentView")
+					if let error = viewModel.contentError {
+						Section(header: Text("Content")) {
+							CatErrorView(
+								viewModel: CatErrorViewModel(
+									error: error.adding("The image could not be retrieved. This might be due to a network issue or the image being unavailable on the server. Please check your connection and try again.")
+								)
+							).accessibleLabel("The cat image is not available, this might be due to a network issue or the image being unavailable on the server.")
+						}
+					} else {
+						CatDetailContentView(viewModel: CatDetailContentViewModel(
+							contentUrl: viewModel.contentUrl,
+							error: $viewModel.contentError)
+						)
+						.combineAccessibilityElements()
+						.setAccessibilityIdentifier("CatDetailContentView")
+						.removeAccessibilityImageTrait()
+						.addAccessibilityButtonTrait()
+						.accessibleLabel("This is the cat content image or animated image, dobule tap to preview the content in a full sccreen view, where you can also share it")
+					}
 					
-					CatDetailTagView(
-						tags: viewModel.tags
-					)
-					.accessibility(identifier: "CatDetailTagView")
+					if let tags = viewModel.tags {
+						CatDetailTagView(
+							viewModel: CatDetailTagViewModel(
+								tags: tags
+							)
+						)
+						.setAccessibilityIdentifier("CatDetailTagView")
+						.combineAccessibilityElements()
+						.accessibleLabel("These are the cat tags: \(viewModel.accessibleTags)")
+					}
 					
-					CatInfoView(
-						details: viewModel.catDetails
-					)
-					.accessibility(identifier: "CatInfoView")
+					if let error = viewModel.detailError {
+						Section(header: Text("Info")) {
+							CatErrorView(
+								viewModel: CatErrorViewModel(
+									error: error.adding("The details of the image could not be retrieved. This may be due to a network issue or the details being unavailable on the server. Please check your connection and try again.")
+								)
+							).accessibleLabel("The cat image is not available, this might be due to a network issue or the image being unavailable on the server.")
+						}
+					} else {
+						CatInfoView(
+							viewModel: CatInfoViewModel(
+								details: viewModel.catDetails
+							)
+						)
+						.setAccessibilityIdentifier("CatInfoView")
+						.combineAccessibilityElements()
+						.accessibleLabel("These are the cat details: \(viewModel.accessibleCatDetails)")
+					}
 				}
 				.background(theme.backgroundColor)
 				.scrollContentBackground(.hidden)
 				.listSectionSpacing(theme.basePadding)
 				.navigationTitle("Cat Details")
 			}
+		}.onAppear {
+			viewModel.handleData()
 		}
 	}
 }

@@ -8,17 +8,12 @@
 import Foundation
 import SwiftUI
 
-enum CatContent {
-	case text(String)
-	case icon(Image)
-}
-
 struct CatContentView: View {
 	@EnvironmentObject var theme: CatThemeManager
-	let content: CatContent
+	@ObservedObject var viewModel: CatContentViewModel
 	
 	var body: some View {
-		switch content {
+		switch viewModel.content {
 			case .icon(let icon):
 				icon
 					.resizable()
@@ -30,7 +25,7 @@ struct CatContentView: View {
 					.clipShape(Circle())
 			case .text(let text):
 				Text(text)
-					.font(theme.secondaryFont)
+					.font(theme.tagFont)
 					.padding(theme.basePadding)
 					.background(CatBlurView(style: theme.lightBackgroundBlurStyle))
 					.clipShape(RoundedRectangle(cornerRadius: theme.cornerRadius))

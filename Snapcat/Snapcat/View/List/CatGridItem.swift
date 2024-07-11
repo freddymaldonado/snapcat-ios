@@ -11,33 +11,31 @@ import SDWebImageSwiftUI
 
 struct CatGridItem: View {
 	@EnvironmentObject var theme: CatThemeManager
-	@EnvironmentObject var viewModel: CatListViewModel
-	@State private var error: Bool = false
-	let cat: Cat
-	let imageURL: URL?
-	let size: CGFloat
+	@ObservedObject var viewModel: CatGridItemViewModel
 	
 	var body: some View {
 		ZStack(alignment: .bottom) {
-			if error {
+			if (viewModel.error != nil) {
 				Image(systemName: "network.slash")
 					.resizable()
 					.applyFrame(size: 80)
 					.tint(theme.tintColor)
 			} else {
 				CatMediaView(
-					error: $error,
-					url: imageURL,
-					size: size,
-					playbackMode: .bounce,
-					scaledToFit: false
+					viewModel: CatMediaViewModel(
+						cat: viewModel.cat,
+						error:$viewModel.error,
+						url: viewModel.contentUrl,
+						size: viewModel.size,
+						playbackMode: .bounce,
+						scaledToFit: false)
 				)
 				.overlay(
 					VStack {
 						HStack {
 							CatContentView(
-								content: .icon(
-									Image(systemName: cat.isGif ? "rectangle.stack.badge.play" : "photo")
+								viewModel: CatContentViewModel(
+									content: .icon(Image(systemName: viewModel.typeIcon))
 								)
 							)
 							Spacer()
@@ -47,12 +45,15 @@ struct CatGridItem: View {
 						.padding(theme.basePadding), alignment: .topLeading
 				)
 				
-				if let previewTags = cat.previewTags {
-					CatContentView(content: .text(previewTags))
+				if let previewTags = viewModel.previewTags {					
+					CatContentView(
+						viewModel: CatContentViewModel(
+							content: .text(previewTags))
+					)
 				}
 			}
 		}
-		.frame(width: size, height: size)
+		.frame(width: viewModel.size, height: viewModel.size)
 		.cornerRadius(theme.cornerRadius)
 	}
 }

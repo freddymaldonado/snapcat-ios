@@ -10,27 +10,34 @@ import SwiftUI
 
 struct CatErrorView: View {
 	@EnvironmentObject var theme: CatThemeManager
-	var error: NetworkError
+	@ObservedObject var viewModel: CatErrorViewModel
 	
 	var body: some View {
-		VStack(alignment: .center) {
-			Text("Oops!")
-				.font(theme.currentTheme.primaryFont)
-				.foregroundColor(theme.currentTheme.primaryFontColorLight)
-				.padding(.bottom, theme.currentTheme.basePadding)
-			
-			Text(error.errorDescription)
-				.font(theme.currentTheme.secondaryFont)
-				.foregroundColor(theme.currentTheme.secondaryFontColorLight)
-				.multilineTextAlignment(.center)
-				.padding()
-				.background(Color.red.opacity(0.2))
-				.cornerRadius(theme.currentTheme.cornerRadius)
-				.padding()
+		VStack(spacing: .zero) {
+			Spacer()
+			VStack(alignment: .center, spacing: .zero) {
+				Image(systemName: "wifi.exclamationmark")
+					.resizable()
+					.renderingMode(.template)
+					.foregroundColor(.red)
+					.scaledToFit()
+					.applyFrame(size: 60)
+					.padding()
+				
+				Text(viewModel.errorDescription)
+					.font(theme.currentTheme.secondaryFont)
+					.foregroundColor(.red)
+					.multilineTextAlignment(.center)
+					.padding()
+					.background(.red.opacity(0.2))
+					.cornerRadius(theme.currentTheme.cornerRadius)
+					.padding()
+			}
+			.background(.red.opacity(0.1))
+			.cornerRadius(theme.currentTheme.cornerRadius)
+			.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+			Spacer()
 		}
-		.background(theme.currentTheme.backgroundColor)
-		.cornerRadius(theme.currentTheme.cornerRadius)
-		.padding()
-		
+		.frame(maxWidth: .infinity, maxHeight: .infinity)
 	}
 }

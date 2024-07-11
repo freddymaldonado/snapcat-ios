@@ -10,27 +10,45 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct CatMediaView: View {
-	@Binding var error: Bool
 	@EnvironmentObject var theme: CatThemeManager
-	let url: URL?
-	let size: CGFloat?
-	let playbackMode: SDAnimatedImagePlaybackMode
-	let scaledToFit: Bool
+	@ObservedObject var viewModel: CatMediaViewModel
+//	@State var loading: Bool = false
 	
 	var body: some View {
-		WebImage(url: url) { image in
-			image
-		} placeholder: {
+		if let url = viewModel.url {
+			if url.isFileURL {
+				if FileManager.default.fileExists(atPath: url.path) {
+					if let data = try? Data(contentsOf: url) {
+						AnimatedImage(data: data)
+							.onFailure(perform: viewModel.handleFailure)
+							.playbackMode(viewModel.playbackMode)
+							.resizable()
+							.applyImageScaling(scaledToFit: viewModel.scaledToFit)
+							.applyFrame(size: viewModel.size)
+							.clipShape(RoundedRectangle(cornerRadius: theme.basePadding))
+					} else {
+						theme.mediaPlaceholderColor
+					}
+				} else {
+					theme.mediaPlaceholderColor
+				}
+			} else {
+				WebImage(url: url)
+					.onSuccess(perform: { _, data, _ in
+						viewModel.cacheContent(data: data)
+					})
+					.onFailure(perform: viewModel.handleFailure)
+					.playbackMode(viewModel.playbackMode)
+					.resizable()
+					.indicator(content: { _, progress in
+						CatSpinnerView(progress: progress)
+					})
+					.applyImageScaling(scaledToFit: viewModel.scaledToFit)
+					.applyFrame(size: viewModel.size)
+					.clipShape(RoundedRectangle(cornerRadius: theme.basePadding))
+			}
+		} else {
 			theme.mediaPlaceholderColor
 		}
-		.onFailure(perform: { _ in
-			error = true
-		})
-		.playbackMode(playbackMode)
-		.resizable()
-		.indicator(.activity(style: .automatic))
-		.applyImageScaling(scaledToFit: scaledToFit)
-		.applyFrame(size: size)
-		.clipShape(RoundedRectangle(cornerRadius: theme.basePadding))
 	}
 }

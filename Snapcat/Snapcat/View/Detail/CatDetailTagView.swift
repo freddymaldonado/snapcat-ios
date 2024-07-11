@@ -10,30 +10,35 @@ import SwiftUI
 
 struct CatDetailTagView: View {
 	@EnvironmentObject var theme: CatThemeManager
-	var tags: [String]?
-
+	@ObservedObject var viewModel: CatDetailTagViewModel
+	
 	var body: some View {
 		Section(header: Text("Tags")) {
-			if let tags = tags {
+			if let tags = viewModel.tags {
 				if tags.isEmpty {
-					Text("No Tags")
+					Text(viewModel.noTagsText)
 				} else {
 					CatTagView(
-						data: tags,
-						spacing: theme.tagSpacing,
-						alignment: .leading
-					) { item in
-						Text(verbatim: item)
-							.font(theme.tagFont)
-							.foregroundColor(theme.tagFontColor)
-							.padding(theme.basePadding)
-							.background(
-								RoundedRectangle(cornerRadius: theme.cornerRadius / 2.0)
-									.fill(theme.tagBackgroundColor.opacity(theme.tagOpacity))
-							)
-					}
+						viewModel: CatTagViewModel(
+							data: tags,
+							spacing: theme.tagSpacing,
+							alignment: .leading,
+							content: { item in
+								Text(verbatim: item)
+									.font(theme.tagFont)
+									.foregroundColor(theme.tagFontColor)
+									.padding(theme.basePadding)
+									.background(
+										RoundedRectangle(cornerRadius: theme.cornerRadius / 2.0)
+											.fill(theme.tagBackgroundColor.opacity(theme.tagOpacity))
+									)
+							}
+						)
+					)
 				}
 			}
-		}.listRowBackground(Color.clear)
+		}
+		.listRowBackground(Color.clear)
+		.listRowSeparator(.hidden)
 	}
 }

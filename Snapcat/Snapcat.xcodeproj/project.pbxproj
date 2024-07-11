@@ -7,6 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B605B4B62C3C86B6007A8F06 /* CatGridItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605B4B52C3C86B6007A8F06 /* CatGridItemViewModel.swift */; };
+		B605B4B82C3C8B86007A8F06 /* CatMediaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605B4B72C3C8B86007A8F06 /* CatMediaViewModel.swift */; };
+		B605B4BA2C3CD5A3007A8F06 /* CatDetailContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605B4B92C3CD5A3007A8F06 /* CatDetailContentViewModel.swift */; };
+		B605B4BC2C3CD980007A8F06 /* CatDetailTagViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605B4BB2C3CD980007A8F06 /* CatDetailTagViewModel.swift */; };
+		B605B4BE2C3CDA80007A8F06 /* CatInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605B4BD2C3CDA80007A8F06 /* CatInfoViewModel.swift */; };
+		B605B4C02C3CDB4C007A8F06 /* CatErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605B4BF2C3CDB4C007A8F06 /* CatErrorViewModel.swift */; };
+		B605B4C22C3CDC65007A8F06 /* CatFullScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605B4C12C3CDC65007A8F06 /* CatFullScreenViewModel.swift */; };
+		B605B4C42C3CDDF2007A8F06 /* CatTagViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605B4C32C3CDDF2007A8F06 /* CatTagViewModel.swift */; };
+		B605B4C62C3CE14D007A8F06 /* CatInfoRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605B4C52C3CE14D007A8F06 /* CatInfoRowViewModel.swift */; };
+		B605B4C82C3CE26F007A8F06 /* CatContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605B4C72C3CE26F007A8F06 /* CatContentViewModel.swift */; };
+		B605B4CA2C3CE542007A8F06 /* CatSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605B4C92C3CE542007A8F06 /* CatSettingsViewModel.swift */; };
+		B605B4CF2C3CF801007A8F06 /* CatListViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605B4CE2C3CF801007A8F06 /* CatListViewModelProtocol.swift */; };
+		B605B4D12C3CF80E007A8F06 /* CatDetailViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605B4D02C3CF80E007A8F06 /* CatDetailViewModelProtocol.swift */; };
+		B605B4D52C3CF824007A8F06 /* CatGridItemViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605B4D42C3CF824007A8F06 /* CatGridItemViewModelProtocol.swift */; };
+		B605B4D72C3CF82C007A8F06 /* CatMediaViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605B4D62C3CF82C007A8F06 /* CatMediaViewModelProtocol.swift */; };
+		B605B4D92C3CF835007A8F06 /* CatDetailContentViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605B4D82C3CF835007A8F06 /* CatDetailContentViewModelProtocol.swift */; };
+		B605B4DB2C3CF842007A8F06 /* CatDetailTagViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605B4DA2C3CF842007A8F06 /* CatDetailTagViewModelProtocol.swift */; };
+		B605B4DD2C3CF84B007A8F06 /* CatInfoViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605B4DC2C3CF84B007A8F06 /* CatInfoViewModelProtocol.swift */; };
+		B605B4DF2C3CF854007A8F06 /* CatErrorViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605B4DE2C3CF854007A8F06 /* CatErrorViewModelProtocol.swift */; };
+		B605B4E12C3CF85D007A8F06 /* CatFullScreenViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605B4E02C3CF85D007A8F06 /* CatFullScreenViewModelProtocol.swift */; };
+		B605B4E32C3CF866007A8F06 /* CatTagViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605B4E22C3CF866007A8F06 /* CatTagViewModelProtocol.swift */; };
+		B605B4E52C3CF870007A8F06 /* CatInfoRowViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605B4E42C3CF870007A8F06 /* CatInfoRowViewModelProtocol.swift */; };
+		B605B4E72C3CF87B007A8F06 /* CatContentViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605B4E62C3CF87B007A8F06 /* CatContentViewModelProtocol.swift */; };
+		B605B4E92C3CF885007A8F06 /* CatSettingsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605B4E82C3CF885007A8F06 /* CatSettingsViewModelProtocol.swift */; };
 		B6C2BE4A2C334EF700E4E28C /* SnapcatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C2BE492C334EF700E4E28C /* SnapcatApp.swift */; };
 		B6C2BE4C2C334EF700E4E28C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C2BE4B2C334EF700E4E28C /* ContentView.swift */; };
 		B6C2BE4E2C334EF900E4E28C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6C2BE4D2C334EF900E4E28C /* Assets.xcassets */; };
@@ -21,10 +45,11 @@
 		B6C2BE8C2C33606900E4E28C /* CatQueryParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C2BE8B2C33606900E4E28C /* CatQueryParameters.swift */; };
 		B6C2BE982C3361C800E4E28C /* cats.json in Resources */ = {isa = PBXBuildFile; fileRef = B6C2BE972C3361C800E4E28C /* cats.json */; };
 		B6C2BE9B2C3363A900E4E28C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C2BE9A2C3363A900E4E28C /* NetworkService.swift */; };
-		B6C2BE9D2C3363BE00E4E28C /* CatAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C2BE9C2C3363BE00E4E28C /* CatAPI.swift */; };
+		B6C2BE9D2C3363BE00E4E28C /* CatAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C2BE9C2C3363BE00E4E28C /* CatAPIService.swift */; };
 		B6C2BE9F2C3363D500E4E28C /* CatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C2BE9E2C3363D500E4E28C /* CatRepository.swift */; };
 		B6C2BEA12C3364D400E4E28C /* AppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C2BEA02C3364D400E4E28C /* AppRepository.swift */; };
 		B6C2BEAA2C33939E00E4E28C /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B6C2BEA92C33939E00E4E28C /* SDWebImageSwiftUI */; };
+		B6E12EB22C3E659400AAC14C /* CatAnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E12EB12C3E659400AAC14C /* CatAnalyticsManager.swift */; };
 		B6E50CC42C35888600E9D451 /* CatListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E50CC32C35888600E9D451 /* CatListViewModelTests.swift */; };
 		B6E50CC72C3588EE00E9D451 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = B6E50CC62C3588EE00E9D451 /* Nimble */; };
 		B6E50CC92C358C0000E9D451 /* MockCatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E50CC82C358C0000E9D451 /* MockCatRepository.swift */; };
@@ -52,6 +77,42 @@
 		B6E55D2F2C34E601005A68FF /* CatDetailTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E55D2E2C34E601005A68FF /* CatDetailTagView.swift */; };
 		B6E55D312C34F3B4005A68FF /* CatErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E55D302C34F3B4005A68FF /* CatErrorView.swift */; };
 		B6E55D362C3504AE005A68FF /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = B6E55D352C3504AE005A68FF /* Quick */; };
+		B6EE745E2C3EEFE5004C93D0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6EE745D2C3EEFE5004C93D0 /* GoogleService-Info.plist */; };
+		B6EE74612C3EF1B6004C93D0 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B6EE74602C3EF1B6004C93D0 /* FirebaseAnalyticsSwift */; };
+		B6EE74632C3EF1B6004C93D0 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B6EE74622C3EF1B6004C93D0 /* FirebaseCrashlytics */; };
+		B6EE74642C3EF43A004C93D0 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = B6F0F2882C3DEB5100D47356 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		B6EE74682C3EFA27004C93D0 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = B6EE74672C3EFA27004C93D0 /* FirebasePerformance */; };
+		B6EE746A2C3F232B004C93D0 /* CatGridItemViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EE74692C3F232B004C93D0 /* CatGridItemViewModelTests.swift */; };
+		B6EE746C2C3F2539004C93D0 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B6EE746B2C3F2539004C93D0 /* RealmSwift */; };
+		B6EE746D2C3F2539004C93D0 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = B6EE746B2C3F2539004C93D0 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		B6EE74702C3F2558004C93D0 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B6EE746F2C3F2558004C93D0 /* RealmSwift */; };
+		B6EE74712C3F2558004C93D0 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = B6EE746F2C3F2558004C93D0 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		B6EE74742C3F2591004C93D0 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B6EE74732C3F2591004C93D0 /* FirebaseAnalyticsSwift */; };
+		B6EE74762C3F2599004C93D0 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B6EE74752C3F2599004C93D0 /* FirebaseCrashlytics */; };
+		B6EE74782C3F259F004C93D0 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = B6EE74772C3F259F004C93D0 /* FirebasePerformance */; };
+		B6EE747A2C3F28DD004C93D0 /* CatMediaViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EE74792C3F28DC004C93D0 /* CatMediaViewModelTests.swift */; };
+		B6EE747C2C3F3123004C93D0 /* CatDetailContentViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EE747B2C3F3123004C93D0 /* CatDetailContentViewModelTests.swift */; };
+		B6EE747E2C3F31B6004C93D0 /* CatDetailTagViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EE747D2C3F31B6004C93D0 /* CatDetailTagViewModelTests.swift */; };
+		B6EE74802C3F3226004C93D0 /* CatInfoViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EE747F2C3F3226004C93D0 /* CatInfoViewModelTests.swift */; };
+		B6EE74822C3F3322004C93D0 /* CatErrorViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EE74812C3F3322004C93D0 /* CatErrorViewModelTests.swift */; };
+		B6EE74842C3F348C004C93D0 /* CatFullScreenViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EE74832C3F348C004C93D0 /* CatFullScreenViewModelTests.swift */; };
+		B6EE74862C3F37B5004C93D0 /* CatTagViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EE74852C3F37B5004C93D0 /* CatTagViewModelTests.swift */; };
+		B6EE74882C3F3884004C93D0 /* CatInfoRowViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EE74872C3F3884004C93D0 /* CatInfoRowViewModelTests.swift */; };
+		B6EE748A2C3F3918004C93D0 /* CatContentViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EE74892C3F3918004C93D0 /* CatContentViewModelTests.swift */; };
+		B6EE748C2C3F3A0A004C93D0 /* CatSettingsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EE748B2C3F3A0A004C93D0 /* CatSettingsViewModelTests.swift */; };
+		B6EE748E2C3F3CAE004C93D0 /* CatSettingsViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EE748D2C3F3CAE004C93D0 /* CatSettingsViewUITests.swift */; };
+		B6EE74902C3F4978004C93D0 /* CatSpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EE748F2C3F4978004C93D0 /* CatSpinnerView.swift */; };
+		B6F0F2702C3D7D1400D47356 /* AccesibilityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F0F26F2C3D7D1400D47356 /* AccesibilityExtensions.swift */; };
+		B6F0F2732C3D98AC00D47356 /* CatFontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F0F2722C3D98AC00D47356 /* CatFontManager.swift */; };
+		B6F0F2752C3D992400D47356 /* Meows-VGWjy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6F0F2742C3D992400D47356 /* Meows-VGWjy.ttf */; };
+		B6F0F2792C3DA03A00D47356 /* CatFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F0F2782C3DA03A00D47356 /* CatFont.swift */; };
+		B6F0F27D2C3DAD1400D47356 /* Raleway-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6F0F27C2C3DAD1300D47356 /* Raleway-Light.ttf */; };
+		B6F0F2802C3DAE0700D47356 /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6F0F27E2C3DAE0700D47356 /* Raleway-SemiBold.ttf */; };
+		B6F0F2812C3DAE0700D47356 /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6F0F27F2C3DAE0700D47356 /* Raleway-Medium.ttf */; };
+		B6F0F2832C3DB2AB00D47356 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F0F2822C3DB2AB00D47356 /* ColorExtensions.swift */; };
+		B6F0F2862C3DE55A00D47356 /* CatLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F0F2852C3DE55A00D47356 /* CatLocalService.swift */; };
+		B6F0F2892C3DEB5100D47356 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B6F0F2882C3DEB5100D47356 /* RealmSwift */; };
+		B6F0F28B2C3DEBE100D47356 /* CatRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F0F28A2C3DEBE100D47356 /* CatRealm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +132,67 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B6EE74652C3EF43A004C93D0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B6EE74642C3EF43A004C93D0 /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6EE746E2C3F253A004C93D0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B6EE746D2C3F2539004C93D0 /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6EE74722C3F2558004C93D0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B6EE74712C3F2558004C93D0 /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		B605B4B52C3C86B6007A8F06 /* CatGridItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatGridItemViewModel.swift; sourceTree = "<group>"; };
+		B605B4B72C3C8B86007A8F06 /* CatMediaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatMediaViewModel.swift; sourceTree = "<group>"; };
+		B605B4B92C3CD5A3007A8F06 /* CatDetailContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailContentViewModel.swift; sourceTree = "<group>"; };
+		B605B4BB2C3CD980007A8F06 /* CatDetailTagViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailTagViewModel.swift; sourceTree = "<group>"; };
+		B605B4BD2C3CDA80007A8F06 /* CatInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatInfoViewModel.swift; sourceTree = "<group>"; };
+		B605B4BF2C3CDB4C007A8F06 /* CatErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatErrorViewModel.swift; sourceTree = "<group>"; };
+		B605B4C12C3CDC65007A8F06 /* CatFullScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFullScreenViewModel.swift; sourceTree = "<group>"; };
+		B605B4C32C3CDDF2007A8F06 /* CatTagViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatTagViewModel.swift; sourceTree = "<group>"; };
+		B605B4C52C3CE14D007A8F06 /* CatInfoRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatInfoRowViewModel.swift; sourceTree = "<group>"; };
+		B605B4C72C3CE26F007A8F06 /* CatContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatContentViewModel.swift; sourceTree = "<group>"; };
+		B605B4C92C3CE542007A8F06 /* CatSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatSettingsViewModel.swift; sourceTree = "<group>"; };
+		B605B4CE2C3CF801007A8F06 /* CatListViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListViewModelProtocol.swift; sourceTree = "<group>"; };
+		B605B4D02C3CF80E007A8F06 /* CatDetailViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailViewModelProtocol.swift; sourceTree = "<group>"; };
+		B605B4D42C3CF824007A8F06 /* CatGridItemViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatGridItemViewModelProtocol.swift; sourceTree = "<group>"; };
+		B605B4D62C3CF82C007A8F06 /* CatMediaViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatMediaViewModelProtocol.swift; sourceTree = "<group>"; };
+		B605B4D82C3CF835007A8F06 /* CatDetailContentViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailContentViewModelProtocol.swift; sourceTree = "<group>"; };
+		B605B4DA2C3CF842007A8F06 /* CatDetailTagViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailTagViewModelProtocol.swift; sourceTree = "<group>"; };
+		B605B4DC2C3CF84B007A8F06 /* CatInfoViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatInfoViewModelProtocol.swift; sourceTree = "<group>"; };
+		B605B4DE2C3CF854007A8F06 /* CatErrorViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatErrorViewModelProtocol.swift; sourceTree = "<group>"; };
+		B605B4E02C3CF85D007A8F06 /* CatFullScreenViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFullScreenViewModelProtocol.swift; sourceTree = "<group>"; };
+		B605B4E22C3CF866007A8F06 /* CatTagViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatTagViewModelProtocol.swift; sourceTree = "<group>"; };
+		B605B4E42C3CF870007A8F06 /* CatInfoRowViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatInfoRowViewModelProtocol.swift; sourceTree = "<group>"; };
+		B605B4E62C3CF87B007A8F06 /* CatContentViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatContentViewModelProtocol.swift; sourceTree = "<group>"; };
+		B605B4E82C3CF885007A8F06 /* CatSettingsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatSettingsViewModelProtocol.swift; sourceTree = "<group>"; };
 		B6C2BE462C334EF700E4E28C /* Snapcat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snapcat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6C2BE492C334EF700E4E28C /* SnapcatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapcatApp.swift; sourceTree = "<group>"; };
 		B6C2BE4B2C334EF700E4E28C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -89,9 +210,10 @@
 		B6C2BE8B2C33606900E4E28C /* CatQueryParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatQueryParameters.swift; sourceTree = "<group>"; };
 		B6C2BE972C3361C800E4E28C /* cats.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cats.json; sourceTree = "<group>"; };
 		B6C2BE9A2C3363A900E4E28C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		B6C2BE9C2C3363BE00E4E28C /* CatAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatAPI.swift; sourceTree = "<group>"; };
+		B6C2BE9C2C3363BE00E4E28C /* CatAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatAPIService.swift; sourceTree = "<group>"; };
 		B6C2BE9E2C3363D500E4E28C /* CatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatRepository.swift; sourceTree = "<group>"; };
 		B6C2BEA02C3364D400E4E28C /* AppRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRepository.swift; sourceTree = "<group>"; };
+		B6E12EB12C3E659400AAC14C /* CatAnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatAnalyticsManager.swift; sourceTree = "<group>"; };
 		B6E50CC32C35888600E9D451 /* CatListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListViewModelTests.swift; sourceTree = "<group>"; };
 		B6E50CC82C358C0000E9D451 /* MockCatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCatRepository.swift; sourceTree = "<group>"; };
 		B6E50CCA2C358C8A00E9D451 /* CatDetailViewModelTests.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailViewModelTests.swift.swift; sourceTree = "<group>"; };
@@ -115,6 +237,30 @@
 		B6E55D2C2C34E4FA005A68FF /* CatDetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailContentView.swift; sourceTree = "<group>"; };
 		B6E55D2E2C34E601005A68FF /* CatDetailTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailTagView.swift; sourceTree = "<group>"; };
 		B6E55D302C34F3B4005A68FF /* CatErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatErrorView.swift; sourceTree = "<group>"; };
+		B6EE745D2C3EEFE5004C93D0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B6EE74692C3F232B004C93D0 /* CatGridItemViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatGridItemViewModelTests.swift; sourceTree = "<group>"; };
+		B6EE74792C3F28DC004C93D0 /* CatMediaViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatMediaViewModelTests.swift; sourceTree = "<group>"; };
+		B6EE747B2C3F3123004C93D0 /* CatDetailContentViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailContentViewModelTests.swift; sourceTree = "<group>"; };
+		B6EE747D2C3F31B6004C93D0 /* CatDetailTagViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailTagViewModelTests.swift; sourceTree = "<group>"; };
+		B6EE747F2C3F3226004C93D0 /* CatInfoViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatInfoViewModelTests.swift; sourceTree = "<group>"; };
+		B6EE74812C3F3322004C93D0 /* CatErrorViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatErrorViewModelTests.swift; sourceTree = "<group>"; };
+		B6EE74832C3F348C004C93D0 /* CatFullScreenViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFullScreenViewModelTests.swift; sourceTree = "<group>"; };
+		B6EE74852C3F37B5004C93D0 /* CatTagViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatTagViewModelTests.swift; sourceTree = "<group>"; };
+		B6EE74872C3F3884004C93D0 /* CatInfoRowViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatInfoRowViewModelTests.swift; sourceTree = "<group>"; };
+		B6EE74892C3F3918004C93D0 /* CatContentViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatContentViewModelTests.swift; sourceTree = "<group>"; };
+		B6EE748B2C3F3A0A004C93D0 /* CatSettingsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatSettingsViewModelTests.swift; sourceTree = "<group>"; };
+		B6EE748D2C3F3CAE004C93D0 /* CatSettingsViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatSettingsViewUITests.swift; sourceTree = "<group>"; };
+		B6EE748F2C3F4978004C93D0 /* CatSpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatSpinnerView.swift; sourceTree = "<group>"; };
+		B6F0F26F2C3D7D1400D47356 /* AccesibilityExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccesibilityExtensions.swift; sourceTree = "<group>"; };
+		B6F0F2722C3D98AC00D47356 /* CatFontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFontManager.swift; sourceTree = "<group>"; };
+		B6F0F2742C3D992400D47356 /* Meows-VGWjy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Meows-VGWjy.ttf"; sourceTree = "<group>"; };
+		B6F0F2782C3DA03A00D47356 /* CatFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFont.swift; sourceTree = "<group>"; };
+		B6F0F27C2C3DAD1300D47356 /* Raleway-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Light.ttf"; sourceTree = "<group>"; };
+		B6F0F27E2C3DAE0700D47356 /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
+		B6F0F27F2C3DAE0700D47356 /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Medium.ttf"; sourceTree = "<group>"; };
+		B6F0F2822C3DB2AB00D47356 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		B6F0F2852C3DE55A00D47356 /* CatLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatLocalService.swift; sourceTree = "<group>"; };
+		B6F0F28A2C3DEBE100D47356 /* CatRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatRealm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +268,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6EE74612C3EF1B6004C93D0 /* FirebaseAnalyticsSwift in Frameworks */,
+				B6EE74632C3EF1B6004C93D0 /* FirebaseCrashlytics in Frameworks */,
+				B6EE74682C3EFA27004C93D0 /* FirebasePerformance in Frameworks */,
+				B6F0F2892C3DEB5100D47356 /* RealmSwift in Frameworks */,
 				B6C2BEAA2C33939E00E4E28C /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,6 +280,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6EE746C2C3F2539004C93D0 /* RealmSwift in Frameworks */,
 				B6E55D362C3504AE005A68FF /* Quick in Frameworks */,
 				B6E50CC72C3588EE00E9D451 /* Nimble in Frameworks */,
 			);
@@ -139,15 +290,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6EE74782C3F259F004C93D0 /* FirebasePerformance in Frameworks */,
+				B6EE74702C3F2558004C93D0 /* RealmSwift in Frameworks */,
 				B6E50CD42C35965700E9D451 /* SDWebImageSwiftUI in Frameworks */,
 				B6E50CCE2C358F8F00E9D451 /* Quick in Frameworks */,
+				B6EE74762C3F2599004C93D0 /* FirebaseCrashlytics in Frameworks */,
 				B6E50CD02C358F9400E9D451 /* Nimble in Frameworks */,
+				B6EE74742C3F2591004C93D0 /* FirebaseAnalyticsSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B605B4CD2C3CF7EC007A8F06 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B605B4CE2C3CF801007A8F06 /* CatListViewModelProtocol.swift */,
+				B605B4D02C3CF80E007A8F06 /* CatDetailViewModelProtocol.swift */,
+				B605B4D42C3CF824007A8F06 /* CatGridItemViewModelProtocol.swift */,
+				B605B4D62C3CF82C007A8F06 /* CatMediaViewModelProtocol.swift */,
+				B605B4D82C3CF835007A8F06 /* CatDetailContentViewModelProtocol.swift */,
+				B605B4DA2C3CF842007A8F06 /* CatDetailTagViewModelProtocol.swift */,
+				B605B4DC2C3CF84B007A8F06 /* CatInfoViewModelProtocol.swift */,
+				B605B4DE2C3CF854007A8F06 /* CatErrorViewModelProtocol.swift */,
+				B605B4E02C3CF85D007A8F06 /* CatFullScreenViewModelProtocol.swift */,
+				B605B4E22C3CF866007A8F06 /* CatTagViewModelProtocol.swift */,
+				B605B4E42C3CF870007A8F06 /* CatInfoRowViewModelProtocol.swift */,
+				B605B4E62C3CF87B007A8F06 /* CatContentViewModelProtocol.swift */,
+				B605B4E82C3CF885007A8F06 /* CatSettingsViewModelProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		B6C2BE3D2C334EF700E4E28C = {
 			isa = PBXGroup;
 			children = (
@@ -172,8 +347,11 @@
 		B6C2BE482C334EF700E4E28C /* Snapcat */ = {
 			isa = PBXGroup;
 			children = (
-				B6E55D222C34A3F0005A68FF /* Info.plist */,
 				B6C2BE492C334EF700E4E28C /* SnapcatApp.swift */,
+				B6EE745D2C3EEFE5004C93D0 /* GoogleService-Info.plist */,
+				B6E55D222C34A3F0005A68FF /* Info.plist */,
+				B6F0F2712C3D972700D47356 /* Font */,
+				B6F0F26C2C3D7C9900D47356 /* Accessibility */,
 				B6E55D1B2C34983F005A68FF /* Theme */,
 				B6C2BE8E2C3360E200E4E28C /* Utilities */,
 				B6C2BE8A2C33604F00E4E28C /* Model */,
@@ -181,6 +359,7 @@
 				B6C2BE752C33564100E4E28C /* View */,
 				B6C2BE7E2C3357F100E4E28C /* Network */,
 				B6C2BE992C33636B00E4E28C /* Repositories */,
+				B6E12EB02C3E64F600AAC14C /* Analytics */,
 				B6C2BE8D2C33607900E4E28C /* Resources */,
 				B6C2BE4F2C334EF900E4E28C /* Preview Content */,
 			);
@@ -200,6 +379,17 @@
 			children = (
 				B6E50CC32C35888600E9D451 /* CatListViewModelTests.swift */,
 				B6E50CCA2C358C8A00E9D451 /* CatDetailViewModelTests.swift.swift */,
+				B6EE74692C3F232B004C93D0 /* CatGridItemViewModelTests.swift */,
+				B6EE74792C3F28DC004C93D0 /* CatMediaViewModelTests.swift */,
+				B6EE747B2C3F3123004C93D0 /* CatDetailContentViewModelTests.swift */,
+				B6EE747D2C3F31B6004C93D0 /* CatDetailTagViewModelTests.swift */,
+				B6EE747F2C3F3226004C93D0 /* CatInfoViewModelTests.swift */,
+				B6EE74812C3F3322004C93D0 /* CatErrorViewModelTests.swift */,
+				B6EE74832C3F348C004C93D0 /* CatFullScreenViewModelTests.swift */,
+				B6EE74852C3F37B5004C93D0 /* CatTagViewModelTests.swift */,
+				B6EE74872C3F3884004C93D0 /* CatInfoRowViewModelTests.swift */,
+				B6EE74892C3F3918004C93D0 /* CatContentViewModelTests.swift */,
+				B6EE748B2C3F3A0A004C93D0 /* CatSettingsViewModelTests.swift */,
 				B6E50CC82C358C0000E9D451 /* MockCatRepository.swift */,
 			);
 			path = SnapcatTests;
@@ -210,6 +400,7 @@
 			children = (
 				B6C2BE642C334EFA00E4E28C /* CatListViewUITests.swift */,
 				B6E50CD12C3590A500E9D451 /* CatDetailViewUITests.swift */,
+				B6EE748D2C3F3CAE004C93D0 /* CatSettingsViewUITests.swift */,
 				B6C2BE662C334EFA00E4E28C /* SnapcatUITestsLaunchTests.swift */,
 			);
 			path = SnapcatUITests;
@@ -232,7 +423,8 @@
 			isa = PBXGroup;
 			children = (
 				B6C2BE9A2C3363A900E4E28C /* NetworkService.swift */,
-				B6C2BE9C2C3363BE00E4E28C /* CatAPI.swift */,
+				B6C2BE9C2C3363BE00E4E28C /* CatAPIService.swift */,
+				B6F0F2852C3DE55A00D47356 /* CatLocalService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -240,8 +432,20 @@
 		B6C2BE7F2C3358BA00E4E28C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B605B4CD2C3CF7EC007A8F06 /* Protocols */,
 				B6C2BE862C335D0100E4E28C /* CatListViewModel.swift */,
 				B6C2BE882C335D1B00E4E28C /* CatDetailViewModel.swift */,
+				B605B4B52C3C86B6007A8F06 /* CatGridItemViewModel.swift */,
+				B605B4B72C3C8B86007A8F06 /* CatMediaViewModel.swift */,
+				B605B4B92C3CD5A3007A8F06 /* CatDetailContentViewModel.swift */,
+				B605B4BB2C3CD980007A8F06 /* CatDetailTagViewModel.swift */,
+				B605B4BD2C3CDA80007A8F06 /* CatInfoViewModel.swift */,
+				B605B4BF2C3CDB4C007A8F06 /* CatErrorViewModel.swift */,
+				B605B4C12C3CDC65007A8F06 /* CatFullScreenViewModel.swift */,
+				B605B4C32C3CDDF2007A8F06 /* CatTagViewModel.swift */,
+				B605B4C52C3CE14D007A8F06 /* CatInfoRowViewModel.swift */,
+				B605B4C72C3CE26F007A8F06 /* CatContentViewModel.swift */,
+				B605B4C92C3CE542007A8F06 /* CatSettingsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -250,6 +454,7 @@
 			isa = PBXGroup;
 			children = (
 				B6C2BE802C33590700E4E28C /* Cat.swift */,
+				B6F0F28A2C3DEBE100D47356 /* CatRealm.swift */,
 				B6C2BE8B2C33606900E4E28C /* CatQueryParameters.swift */,
 			);
 			path = Model;
@@ -258,6 +463,10 @@
 		B6C2BE8D2C33607900E4E28C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B6F0F27F2C3DAE0700D47356 /* Raleway-Medium.ttf */,
+				B6F0F27E2C3DAE0700D47356 /* Raleway-SemiBold.ttf */,
+				B6F0F2742C3D992400D47356 /* Meows-VGWjy.ttf */,
+				B6F0F27C2C3DAD1300D47356 /* Raleway-Light.ttf */,
 				B6C2BE4D2C334EF900E4E28C /* Assets.xcassets */,
 				B6C2BE972C3361C800E4E28C /* cats.json */,
 			);
@@ -269,6 +478,7 @@
 			children = (
 				B6E55D192C34978B005A68FF /* CatViewExtensions.swift */,
 				B6E55D232C34CEF1005A68FF /* CatColorExtensions.swift */,
+				B6F0F2822C3DB2AB00D47356 /* ColorExtensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -280,6 +490,14 @@
 				B6C2BEA02C3364D400E4E28C /* AppRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		B6E12EB02C3E64F600AAC14C /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				B6E12EB12C3E659400AAC14C /* CatAnalyticsManager.swift */,
+			);
+			path = Analytics;
 			sourceTree = "<group>";
 		};
 		B6E50CCC2C358F8F00E9D451 /* Frameworks */ = {
@@ -302,10 +520,10 @@
 			isa = PBXGroup;
 			children = (
 				B6C2BE842C335CE400E4E28C /* CatDetailView.swift */,
-				B6E55D282C34DD5F005A68FF /* CatInfoRowView.swift */,
-				B6E55D2A2C34E35B005A68FF /* CatInfoView.swift */,
 				B6E55D2C2C34E4FA005A68FF /* CatDetailContentView.swift */,
 				B6E55D2E2C34E601005A68FF /* CatDetailTagView.swift */,
+				B6E55D2A2C34E35B005A68FF /* CatInfoView.swift */,
+				B6E55D282C34DD5F005A68FF /* CatInfoRowView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -320,6 +538,7 @@
 				B6E55D152C348822005A68FF /* CatMediaView.swift */,
 				B6E55D172C348EF1005A68FF /* CatContentView.swift */,
 				B6E55D302C34F3B4005A68FF /* CatErrorView.swift */,
+				B6EE748F2C3F4978004C93D0 /* CatSpinnerView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -349,6 +568,23 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		B6F0F26C2C3D7C9900D47356 /* Accessibility */ = {
+			isa = PBXGroup;
+			children = (
+				B6F0F26F2C3D7D1400D47356 /* AccesibilityExtensions.swift */,
+			);
+			path = Accessibility;
+			sourceTree = "<group>";
+		};
+		B6F0F2712C3D972700D47356 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				B6F0F2722C3D98AC00D47356 /* CatFontManager.swift */,
+				B6F0F2782C3DA03A00D47356 /* CatFont.swift */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -359,6 +595,8 @@
 				B6C2BE422C334EF700E4E28C /* Sources */,
 				B6C2BE432C334EF700E4E28C /* Frameworks */,
 				B6C2BE442C334EF700E4E28C /* Resources */,
+				B6EE74652C3EF43A004C93D0 /* Embed Frameworks */,
+				B6EE74662C3EF742004C93D0 /* Firebase dSYM */,
 			);
 			buildRules = (
 			);
@@ -367,6 +605,10 @@
 			name = Snapcat;
 			packageProductDependencies = (
 				B6C2BEA92C33939E00E4E28C /* SDWebImageSwiftUI */,
+				B6F0F2882C3DEB5100D47356 /* RealmSwift */,
+				B6EE74602C3EF1B6004C93D0 /* FirebaseAnalyticsSwift */,
+				B6EE74622C3EF1B6004C93D0 /* FirebaseCrashlytics */,
+				B6EE74672C3EFA27004C93D0 /* FirebasePerformance */,
 			);
 			productName = Snapcat;
 			productReference = B6C2BE462C334EF700E4E28C /* Snapcat.app */;
@@ -379,6 +621,7 @@
 				B6C2BE522C334EFA00E4E28C /* Sources */,
 				B6C2BE532C334EFA00E4E28C /* Frameworks */,
 				B6C2BE542C334EFA00E4E28C /* Resources */,
+				B6EE746E2C3F253A004C93D0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -389,6 +632,7 @@
 			packageProductDependencies = (
 				B6E55D352C3504AE005A68FF /* Quick */,
 				B6E50CC62C3588EE00E9D451 /* Nimble */,
+				B6EE746B2C3F2539004C93D0 /* RealmSwift */,
 			);
 			productName = SnapcatTests;
 			productReference = B6C2BE562C334EFA00E4E28C /* SnapcatTests.xctest */;
@@ -401,6 +645,7 @@
 				B6C2BE5C2C334EFA00E4E28C /* Sources */,
 				B6C2BE5D2C334EFA00E4E28C /* Frameworks */,
 				B6C2BE5E2C334EFA00E4E28C /* Resources */,
+				B6EE74722C3F2558004C93D0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -412,6 +657,10 @@
 				B6E50CCD2C358F8F00E9D451 /* Quick */,
 				B6E50CCF2C358F9400E9D451 /* Nimble */,
 				B6E50CD32C35965700E9D451 /* SDWebImageSwiftUI */,
+				B6EE746F2C3F2558004C93D0 /* RealmSwift */,
+				B6EE74732C3F2591004C93D0 /* FirebaseAnalyticsSwift */,
+				B6EE74752C3F2599004C93D0 /* FirebaseCrashlytics */,
+				B6EE74772C3F259F004C93D0 /* FirebasePerformance */,
 			);
 			productName = SnapcatUITests;
 			productReference = B6C2BE602C334EFA00E4E28C /* SnapcatUITests.xctest */;
@@ -453,6 +702,8 @@
 				B6C2BEA82C33939E00E4E28C /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				B6E55D342C3504AE005A68FF /* XCRemoteSwiftPackageReference "Quick" */,
 				B6E50CC52C3588EE00E9D451 /* XCRemoteSwiftPackageReference "Nimble" */,
+				B6F0F2872C3DEB5000D47356 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				B6EE745F2C3EF1B6004C93D0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = B6C2BE472C334EF700E4E28C /* Products */;
 			projectDirPath = "";
@@ -470,8 +721,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6F0F2812C3DAE0700D47356 /* Raleway-Medium.ttf in Resources */,
+				B6EE745E2C3EEFE5004C93D0 /* GoogleService-Info.plist in Resources */,
 				B6C2BE512C334EF900E4E28C /* Preview Assets.xcassets in Resources */,
 				B6C2BE982C3361C800E4E28C /* cats.json in Resources */,
+				B6F0F27D2C3DAD1400D47356 /* Raleway-Light.ttf in Resources */,
+				B6F0F2802C3DAE0700D47356 /* Raleway-SemiBold.ttf in Resources */,
+				B6F0F2752C3D992400D47356 /* Meows-VGWjy.ttf in Resources */,
 				B6C2BE4E2C334EF900E4E28C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,38 +748,96 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B6EE74662C3EF742004C93D0 /* Firebase dSYM */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
+				"$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)",
+			);
+			name = "Firebase dSYM";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B6C2BE422C334EF700E4E28C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B6C2BE4C2C334EF700E4E28C /* ContentView.swift in Sources */,
+				B6E12EB22C3E659400AAC14C /* CatAnalyticsManager.swift in Sources */,
+				B6F0F2732C3D98AC00D47356 /* CatFontManager.swift in Sources */,
+				B605B4C22C3CDC65007A8F06 /* CatFullScreenViewModel.swift in Sources */,
 				B6E55D1A2C34978B005A68FF /* CatViewExtensions.swift in Sources */,
 				B6E55D312C34F3B4005A68FF /* CatErrorView.swift in Sources */,
-				B6C2BE9D2C3363BE00E4E28C /* CatAPI.swift in Sources */,
+				B6F0F2702C3D7D1400D47356 /* AccesibilityExtensions.swift in Sources */,
+				B6EE74902C3F4978004C93D0 /* CatSpinnerView.swift in Sources */,
+				B6C2BE9D2C3363BE00E4E28C /* CatAPIService.swift in Sources */,
+				B605B4DD2C3CF84B007A8F06 /* CatInfoViewModelProtocol.swift in Sources */,
 				B6E55D1F2C34986E005A68FF /* CatThemeManager.swift in Sources */,
 				B6C2BE852C335CE400E4E28C /* CatDetailView.swift in Sources */,
+				B6F0F28B2C3DEBE100D47356 /* CatRealm.swift in Sources */,
 				B6C2BE9F2C3363D500E4E28C /* CatRepository.swift in Sources */,
+				B605B4E32C3CF866007A8F06 /* CatTagViewModelProtocol.swift in Sources */,
 				B6C2BE892C335D1B00E4E28C /* CatDetailViewModel.swift in Sources */,
+				B605B4D12C3CF80E007A8F06 /* CatDetailViewModelProtocol.swift in Sources */,
+				B605B4DB2C3CF842007A8F06 /* CatDetailTagViewModelProtocol.swift in Sources */,
+				B605B4E92C3CF885007A8F06 /* CatSettingsViewModelProtocol.swift in Sources */,
 				B6C2BE812C33590700E4E28C /* Cat.swift in Sources */,
+				B605B4D72C3CF82C007A8F06 /* CatMediaViewModelProtocol.swift in Sources */,
 				B6E55D272C34D382005A68FF /* CatSettingsView.swift in Sources */,
+				B605B4C82C3CE26F007A8F06 /* CatContentViewModel.swift in Sources */,
 				B6C2BE9B2C3363A900E4E28C /* NetworkService.swift in Sources */,
+				B6F0F2832C3DB2AB00D47356 /* ColorExtensions.swift in Sources */,
+				B605B4E72C3CF87B007A8F06 /* CatContentViewModelProtocol.swift in Sources */,
 				B6C2BEA12C3364D400E4E28C /* AppRepository.swift in Sources */,
 				B6E55D092C347FB2005A68FF /* CatTagView.swift in Sources */,
+				B605B4D52C3CF824007A8F06 /* CatGridItemViewModelProtocol.swift in Sources */,
 				B6E55D292C34DD5F005A68FF /* CatInfoRowView.swift in Sources */,
+				B605B4DF2C3CF854007A8F06 /* CatErrorViewModelProtocol.swift in Sources */,
+				B605B4BE2C3CDA80007A8F06 /* CatInfoViewModel.swift in Sources */,
+				B605B4CF2C3CF801007A8F06 /* CatListViewModelProtocol.swift in Sources */,
 				B6E55D162C348822005A68FF /* CatMediaView.swift in Sources */,
 				B6C2BE4A2C334EF700E4E28C /* SnapcatApp.swift in Sources */,
+				B605B4C42C3CDDF2007A8F06 /* CatTagViewModel.swift in Sources */,
 				B6E55D0B2C348045005A68FF /* CatFullScreenView.swift in Sources */,
+				B6F0F2862C3DE55A00D47356 /* CatLocalService.swift in Sources */,
 				B6E55D182C348EF1005A68FF /* CatContentView.swift in Sources */,
 				B6E55D2B2C34E35B005A68FF /* CatInfoView.swift in Sources */,
 				B6E55D0D2C348078005A68FF /* CatShareSheet.swift in Sources */,
+				B605B4BA2C3CD5A3007A8F06 /* CatDetailContentViewModel.swift in Sources */,
+				B605B4C62C3CE14D007A8F06 /* CatInfoRowViewModel.swift in Sources */,
 				B6E55D142C348177005A68FF /* CatBlurView.swift in Sources */,
+				B605B4E12C3CF85D007A8F06 /* CatFullScreenViewModelProtocol.swift in Sources */,
 				B6C2BE8C2C33606900E4E28C /* CatQueryParameters.swift in Sources */,
+				B605B4D92C3CF835007A8F06 /* CatDetailContentViewModelProtocol.swift in Sources */,
+				B605B4BC2C3CD980007A8F06 /* CatDetailTagViewModel.swift in Sources */,
+				B605B4B82C3C8B86007A8F06 /* CatMediaViewModel.swift in Sources */,
 				B6E55D242C34CEF1005A68FF /* CatColorExtensions.swift in Sources */,
+				B605B4E52C3CF870007A8F06 /* CatInfoRowViewModelProtocol.swift in Sources */,
 				B6C2BE832C335CD500E4E28C /* CatListView.swift in Sources */,
+				B605B4C02C3CDB4C007A8F06 /* CatErrorViewModel.swift in Sources */,
 				B6E55D1D2C349851005A68FF /* CatTheme.swift in Sources */,
 				B6E55D122C348155005A68FF /* CatGridItem.swift in Sources */,
 				B6E55D2F2C34E601005A68FF /* CatDetailTagView.swift in Sources */,
+				B605B4B62C3C86B6007A8F06 /* CatGridItemViewModel.swift in Sources */,
+				B6F0F2792C3DA03A00D47356 /* CatFont.swift in Sources */,
+				B605B4CA2C3CE542007A8F06 /* CatSettingsViewModel.swift in Sources */,
 				B6C2BE872C335D0100E4E28C /* CatListViewModel.swift in Sources */,
 				B6E55D2D2C34E4FA005A68FF /* CatDetailContentView.swift in Sources */,
 				B6E55D102C348121005A68FF /* CatAnimatedButtonStyle.swift in Sources */,
@@ -534,9 +848,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6EE74882C3F3884004C93D0 /* CatInfoRowViewModelTests.swift in Sources */,
+				B6EE747C2C3F3123004C93D0 /* CatDetailContentViewModelTests.swift in Sources */,
+				B6EE74802C3F3226004C93D0 /* CatInfoViewModelTests.swift in Sources */,
+				B6EE74842C3F348C004C93D0 /* CatFullScreenViewModelTests.swift in Sources */,
 				B6E50CCB2C358C8A00E9D451 /* CatDetailViewModelTests.swift.swift in Sources */,
 				B6E50CC92C358C0000E9D451 /* MockCatRepository.swift in Sources */,
+				B6EE74822C3F3322004C93D0 /* CatErrorViewModelTests.swift in Sources */,
+				B6EE74862C3F37B5004C93D0 /* CatTagViewModelTests.swift in Sources */,
+				B6EE747A2C3F28DD004C93D0 /* CatMediaViewModelTests.swift in Sources */,
+				B6EE747E2C3F31B6004C93D0 /* CatDetailTagViewModelTests.swift in Sources */,
+				B6EE748C2C3F3A0A004C93D0 /* CatSettingsViewModelTests.swift in Sources */,
+				B6EE746A2C3F232B004C93D0 /* CatGridItemViewModelTests.swift in Sources */,
 				B6E50CC42C35888600E9D451 /* CatListViewModelTests.swift in Sources */,
+				B6EE748A2C3F3918004C93D0 /* CatContentViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,6 +869,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6EE748E2C3F3CAE004C93D0 /* CatSettingsViewUITests.swift in Sources */,
 				B6E50CD22C3590A500E9D451 /* CatDetailViewUITests.swift in Sources */,
 				B6C2BE652C334EFA00E4E28C /* CatListViewUITests.swift in Sources */,
 				B6C2BE672C334EFA00E4E28C /* SnapcatUITestsLaunchTests.swift in Sources */,
@@ -692,6 +1018,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"Snapcat/Preview Content\"";
 				DEVELOPMENT_TEAM = DA9HZQLDD3;
 				ENABLE_PREVIEWS = YES;
@@ -708,7 +1035,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.freddymaldonadopereyra.assignment.Snapcat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -724,6 +1052,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"Snapcat/Preview Content\"";
 				DEVELOPMENT_TEAM = DA9HZQLDD3;
 				ENABLE_PREVIEWS = YES;
@@ -740,7 +1069,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.freddymaldonadopereyra.assignment.Snapcat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -891,6 +1221,22 @@
 				kind = branch;
 			};
 		};
+		B6EE745F2C3EF1B6004C93D0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.29.0;
+			};
+		};
+		B6F0F2872C3DEB5000D47356 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -923,6 +1269,51 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B6E55D342C3504AE005A68FF /* XCRemoteSwiftPackageReference "Quick" */;
 			productName = Quick;
+		};
+		B6EE74602C3EF1B6004C93D0 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6EE745F2C3EF1B6004C93D0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		B6EE74622C3EF1B6004C93D0 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6EE745F2C3EF1B6004C93D0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		B6EE74672C3EFA27004C93D0 /* FirebasePerformance */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6EE745F2C3EF1B6004C93D0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebasePerformance;
+		};
+		B6EE746B2C3F2539004C93D0 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6F0F2872C3DEB5000D47356 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		B6EE746F2C3F2558004C93D0 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6F0F2872C3DEB5000D47356 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		B6EE74732C3F2591004C93D0 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6EE745F2C3EF1B6004C93D0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		B6EE74752C3F2599004C93D0 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6EE745F2C3EF1B6004C93D0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		B6EE74772C3F259F004C93D0 /* FirebasePerformance */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6EE745F2C3EF1B6004C93D0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebasePerformance;
+		};
+		B6F0F2882C3DEB5100D47356 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6F0F2872C3DEB5000D47356 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

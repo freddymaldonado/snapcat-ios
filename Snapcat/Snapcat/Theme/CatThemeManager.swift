@@ -8,6 +8,20 @@
 import Combine
 import SwiftUI
 
+struct NavigationControllerWrapper: UIViewControllerRepresentable {
+	var update: (UINavigationController) -> Void
+	
+	func makeUIViewController(context: Context) -> UIViewController {
+		UIViewController()
+	}
+	
+	func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+		if let navigationController = uiViewController.navigationController {
+			update(navigationController)
+		}
+	}
+}
+
 struct ColorSchemeUpdater: ViewModifier {
 	@ObservedObject var themeManager: CatThemeManager
 	
@@ -23,7 +37,7 @@ extension View {
 	}
 }
 
-class CatThemeManager: ObservableObject {
+class CatThemeManager: ObservableObject {	
 	@Published var currentTheme: CatTheme = .lightTheme
 	@Published var colorScheme: ColorScheme = .light
 
@@ -31,11 +45,28 @@ class CatThemeManager: ObservableObject {
 	
 	private init() {
 		colorScheme = (currentTheme == .darkTheme) ? .dark : .light
+		applyProxies()
 	}
 	
 	func switchTheme(to theme: CatTheme) {
 		currentTheme = theme
 		colorScheme = (currentTheme == .darkTheme) ? .dark : .light
+	}
+	
+	func applyProxies() {
+		UINavigationBar.appearance().largeTitleTextAttributes = [
+			.font : navigationFont,
+		]
+		UINavigationBar.appearance().titleTextAttributes = [
+			.font : navigationTitleFont,
+		]
+		
+		UIBarButtonItem.appearance().setTitleTextAttributes([.font : navigationBackButtonFont], for: .normal)
+		UIBarButtonItem.appearance().setTitleTextAttributes([.font : navigationBackButtonFont], for: .highlighted)
+	}
+	
+	var isDarkMode: Bool {
+		currentTheme == .darkTheme
 	}
 	
 	var tintColor: Color {
@@ -46,6 +77,18 @@ class CatThemeManager: ObservableObject {
 		currentTheme.backgroundColor
 	}
 	
+	var navigationFont: UIFont {
+		currentTheme.navigationFont
+	}
+	
+	var navigationTitleFont: UIFont {
+		currentTheme.navigationTitleFont
+	}
+	
+	var navigationBackButtonFont: UIFont {
+		currentTheme.navigationBackButtonFont
+	}
+	
 	var primaryFont: Font {
 		currentTheme.primaryFont
 	}
@@ -54,6 +97,10 @@ class CatThemeManager: ObservableObject {
 		currentTheme.secondaryFont
 	}
 	
+	var attrFont: Font {
+		currentTheme.attrFont
+	}
+		
 	var primaryFontColor: Color {
 		currentTheme.primaryFontColor
 	}
