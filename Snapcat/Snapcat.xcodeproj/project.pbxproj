@@ -520,9 +520,9 @@
 			isa = PBXGroup;
 			children = (
 				B6C2BE842C335CE400E4E28C /* CatDetailView.swift */,
+				B6E55D2A2C34E35B005A68FF /* CatInfoView.swift */,
 				B6E55D2C2C34E4FA005A68FF /* CatDetailContentView.swift */,
 				B6E55D2E2C34E601005A68FF /* CatDetailTagView.swift */,
-				B6E55D2A2C34E35B005A68FF /* CatInfoView.swift */,
 				B6E55D282C34DD5F005A68FF /* CatInfoRowView.swift */,
 			);
 			path = Detail;

@@ -39,7 +39,7 @@ class CatRepositoryImpl: CatRepository {
 					let cats = cachedCats.map { $0.asCat }
 					promise(.success(Array(cats)))
 				} else {
-					self.localService.fetchCats()
+					self.apiService.fetchCats()
 						.sink(receiveCompletion: { completion in
 							if case let .failure(error) = completion {
 								promise(.failure(error))

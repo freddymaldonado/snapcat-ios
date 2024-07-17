@@ -12,8 +12,7 @@ import SDWebImageSwiftUI
 struct CatMediaView: View {
 	@EnvironmentObject var theme: CatThemeManager
 	@ObservedObject var viewModel: CatMediaViewModel
-//	@State var loading: Bool = false
-	
+
 	var body: some View {
 		if let url = viewModel.url {
 			if url.isFileURL {

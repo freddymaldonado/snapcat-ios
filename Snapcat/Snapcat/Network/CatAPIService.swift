@@ -21,8 +21,10 @@ class CatAPIService: CatAPI {
 	}
 	
 	func fetchCats() -> AnyPublisher<[Cat], NetworkError> {
-		guard let url = Bundle.main.url(forResource: "cats", withExtension: "json") else {
-			return Fail(error: NetworkError.badURL(reason: "Resource cats.json not found in the app bundle")).eraseToAnyPublisher()
+		
+		guard let url = URL(string: "https://cataas.com/api/cats") else {
+			return Fail(error: NetworkError.badURL(reason: "Bad Url")).eraseToAnyPublisher()
+
 		}
 		
 		return networkService.fetch(url: url)
