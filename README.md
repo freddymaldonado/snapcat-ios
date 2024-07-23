@@ -17,12 +17,13 @@ To run the project, follow these steps:
 
 Cataas (Cat as a Service) is an API that provides a variety of cat images and gifs for use in your applications. Whether you need a random cat picture, a specific type of cat, or a customized cat image with text, the Cataas API has got you covered.
 
-Features
-Random Cat Images: Fetch random cat images with a simple API call.
-Cat Gifs: Retrieve animated cat gifs to bring some joy to your app.
-Tagged Cats: Get cat images based on specific tags (e.g., "cute", "sleepy", "angry").
-Customizable Images: Create custom cat images with text and filters to suit your needs.
-Fast and Reliable: The API is designed to be fast and reliable, ensuring quick responses and high availability.
+### Features
+* Random Cat Images: Fetch random cat images with a simple API call.
+* Cat Gifs: Retrieve animated cat gifs to bring some joy to your app.
+* Tagged Cats: Get cat images based on specific tags (e.g., "cute", "sleepy", "angry").
+* Customizable Images: Create custom cat images with text and filters to suit your needs.
+* Fast and Reliable: The API is designed to be fast and reliable, ensuring quick responses and high availability.
+* And much more!
 
 For more details, check out the official Cat as a Service website:
 
