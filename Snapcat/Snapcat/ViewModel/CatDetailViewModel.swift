@@ -30,10 +30,6 @@ class CatDetailViewModel: CatDetailViewModelProtocol {
 	}
 	
 	func fetchCatDetail(id: String, parameters: CatQueryParameters?) {
-		CatAnalyticsManager.startTrace(trace: .catDetailsLoad)
-		CatAnalyticsManager.setValue("loading",
-									 forAttribute: "fetch_cat_detail",
-									 onTrace: .catDetailsLoad)
 		isLoading = true
 		repository.fetchCatDetail(id: id)
 			.receive(on: DispatchQueue.main)
@@ -43,19 +39,13 @@ class CatDetailViewModel: CatDetailViewModelProtocol {
 					self.isLoading = false
 					if case .failure(let error) = completion {
 						self.detailError = error
-						CatAnalyticsManager.setValue(error.errorDescription,
-													 forAttribute: "fetch_cat_detail",
-													 onTrace: .catDetailsLoad)
 					}
-					CatAnalyticsManager.stopTrace(trace: .catDetailsLoad)
 				}
 			}, receiveValue: { [weak self] cat in
 				guard let self = self else { return }
 				DispatchQueue.main.async {
 					self.isLoading = false
 					self.cat = cat
-					CatAnalyticsManager.setValue(self.accessibleCatDetails.joined(separator: " "),forAttribute: "fetch_cat_detail", onTrace: .catDetailsLoad)
-					CatAnalyticsManager.stopTrace(trace: .catDetailsLoad)
 				}
 			})
 			.store(in: &cancellables)

@@ -11,24 +11,24 @@ import SwiftUI
 
 class CatListViewModel: CatListViewModelProtocol {
 	@Published var cats: [Cat] = []
+	@Published var tags: [String]? = []
 	@Published var isLoading = false
 	@Published var error: NetworkError?
+	@Published var search = [String]()
 	
 	private var cancellables = Set<AnyCancellable>()
 	private let repository: CatRepository
 	
+
 	init(repository: CatRepository = AppRepository.shared) {
 		self.repository = repository
-		fetchCats()
+		fetchTags()
+		fetchCats(limit: 10, skip: 0, tags: [])
 	}
 	
-	func fetchCats() {
-		CatAnalyticsManager.startTrace(trace: .catListLoad)
-		CatAnalyticsManager.setValue("loading",
-									 forAttribute: "fetch_cats",
-									 onTrace: .catListLoad)
+	func fetchCats(limit: Int, skip: Int, tags: [String]) {
 		isLoading = true
-		repository.fetchCats()
+		repository.fetchCats(limit: limit, skip: skip, tags: tags)
 			.receive(on: DispatchQueue.main)
 			.sink(receiveCompletion: { [weak self] completion in
 				guard let self = self else { return }
@@ -36,23 +36,90 @@ class CatListViewModel: CatListViewModelProtocol {
 					self.isLoading = false
 					if case .failure(let error) = completion {
 						self.error = error
-						CatAnalyticsManager.setValue(error.errorDescription,
-													 forAttribute: "fetch_cats",
-													 onTrace: .catListLoad)
 					}
-					CatAnalyticsManager.stopTrace(trace: .catListLoad)
 				}
 			}, receiveValue: { [weak self] cats in
 				guard let self = self else { return }
 				DispatchQueue.main.async {
 					self.isLoading = false
 					self.cats = cats
-					CatAnalyticsManager.setValue("success, fetched \(cats.count) cats",
-												 forAttribute: "fetch_cats",
-												 onTrace: .catListLoad)
-					CatAnalyticsManager.stopTrace(trace: .catListLoad)
 				}
 			})
 			.store(in: &cancellables)
+	}
+	
+	func loadMoreCats() {
+		isLoading = true
+		repository.fetchCats(limit: 10, skip: cats.count, tags: [])
+			.receive(on: DispatchQueue.main)
+			.sink(receiveCompletion: { [weak self] completion in
+				guard let self = self else { return }
+				DispatchQueue.main.async {
+					self.isLoading = false
+					if case .failure(let error) = completion {
+						self.error = error
+					}
+				}
+			}, receiveValue: { [weak self] newCats in
+				guard let self = self else { return }
+				DispatchQueue.main.async {
+					self.isLoading = false
+					self.cats.append(contentsOf: newCats)
+				}
+			})
+			.store(in: &cancellables)
+	}
+	
+	func fetchTags() {
+		isLoading = true
+		repository.fetchTags()
+			.receive(on: DispatchQueue.main)
+			.sink(receiveCompletion: { [weak self] completion in
+				guard let self = self else { return }
+				DispatchQueue.main.async {
+					self.isLoading = false
+					if case .failure(let error) = completion {
+						self.error = error
+					}
+				}
+			}, receiveValue: { [weak self] tags in
+				guard let self = self else { return }
+				DispatchQueue.main.async {
+					self.isLoading = false
+					self.tags = tags
+				}
+			})
+			.store(in: &cancellables)
+	}
+	
+	func searchCats() {
+		isLoading = true
+		let jaja = self.search
+		repository.fetchCats(limit: 10, skip: 0, tags: self.search)
+			.receive(on: DispatchQueue.main)
+			.sink(receiveCompletion: { [weak self] completion in
+				guard let self = self else { return }
+				DispatchQueue.main.async {
+					self.isLoading = false
+					if case .failure(let error) = completion {
+						self.error = error
+					}
+				}
+			}, receiveValue: { [weak self] cats in
+				guard let self = self else { return }
+				DispatchQueue.main.async {
+					self.isLoading = false
+					self.cats = cats
+					if cats.isEmpty {
+						self.error = .requestFailed(reason: "Cats not found with the following tag combination: \(self.search)")
+					}
+				}
+			})
+			.store(in: &cancellables)
+	}
+	
+	func search(tag: String) {
+		self.search.append(tag)
+		searchCats()
 	}
 }

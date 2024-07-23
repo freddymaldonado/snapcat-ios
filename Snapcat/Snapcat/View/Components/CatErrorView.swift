@@ -21,7 +21,7 @@ struct CatErrorView: View {
 					.renderingMode(.template)
 					.foregroundColor(.red)
 					.scaledToFit()
-					.applyFrame(size: 60)
+					.frame(maxWidth: .infinity, maxHeight: 60)
 					.padding()
 				
 				Text(viewModel.errorDescription)

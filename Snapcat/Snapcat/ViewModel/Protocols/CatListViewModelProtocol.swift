@@ -11,5 +11,5 @@ protocol CatListViewModelProtocol: ObservableObject {
 	var cats: [Cat] { get set }
 	var isLoading: Bool { get set }
 	var error: NetworkError? { get set }
-	func fetchCats()
+	func fetchCats(limit: Int, skip: Int, tags: [String])
 }

@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct Cat: Identifiable, Equatable {
+struct Tag: Identifiable, Equatable, Hashable {
+	let id = UUID()
+	let tag: String
+}
+
+struct Cat: Identifiable, Equatable, Hashable {
 	let id: String
 	let tags: [String]?
 	let owner: String?

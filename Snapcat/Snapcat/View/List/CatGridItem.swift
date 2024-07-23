@@ -12,6 +12,7 @@ import SDWebImageSwiftUI
 struct CatGridItem: View {
 	@EnvironmentObject var theme: CatThemeManager
 	@ObservedObject var viewModel: CatGridItemViewModel
+	@State private var isVisible: Bool = false
 	
 	var body: some View {
 		ZStack(alignment: .bottom) {
@@ -24,7 +25,7 @@ struct CatGridItem: View {
 				CatMediaView(
 					viewModel: CatMediaViewModel(
 						cat: viewModel.cat,
-						error:$viewModel.error,
+						error: $viewModel.error,
 						url: viewModel.contentUrl,
 						size: viewModel.size,
 						playbackMode: .bounce,
@@ -45,7 +46,7 @@ struct CatGridItem: View {
 						.padding(theme.basePadding), alignment: .topLeading
 				)
 				
-				if let previewTags = viewModel.previewTags {					
+				if let previewTags = viewModel.previewTags {
 					CatContentView(
 						viewModel: CatContentViewModel(
 							content: .text(previewTags))
@@ -55,5 +56,12 @@ struct CatGridItem: View {
 		}
 		.frame(width: viewModel.size, height: viewModel.size)
 		.cornerRadius(theme.cornerRadius)
+		.opacity(isVisible ? 1.0 : 0.0)
+		.animation(.easeIn(duration: 0.5), value: isVisible)
+		.onAppear {
+			withAnimation {
+				isVisible = true
+			}
+		}
 	}
 }

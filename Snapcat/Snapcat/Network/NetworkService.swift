@@ -47,6 +47,7 @@ class URLSessionNetworkService: NetworkService {
 	func fetch<T: Decodable>(url: URL) -> AnyPublisher<T, NetworkError> {
 		var request = URLRequest(url: url)
 		request.cachePolicy = .returnCacheDataElseLoad
+		request.timeoutInterval = 30
 		
 		return URLSession.shared.dataTaskPublisher(for: request)
 			.map { $0.data }

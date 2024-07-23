@@ -11,8 +11,37 @@ import RealmSwift
 
 protocol CatRepository {
 	func fetchCats() -> AnyPublisher<[Cat], NetworkError>
+	func fetchCats(limit: Int, skip: Int) -> AnyPublisher<[Cat], NetworkError>
+	func fetchCats(limit: Int, skip: Int, tags: [String]) -> AnyPublisher<[Cat], NetworkError>
+	func fetchTags() -> AnyPublisher<[String], NetworkError>
 	func fetchCatDetail(id: String) -> AnyPublisher<Cat, NetworkError>
 	func cacheImage(for cat: Cat, data: Data, completion: @escaping () -> Void)
+}
+
+extension CatRepository {
+	func fetchCats() -> AnyPublisher<[Cat], NetworkError> {
+		return Fail(error: NetworkError.badURL(reason: "Method not implemented")).eraseToAnyPublisher()
+	}
+	
+	func fetchCatDetail(id: String) -> AnyPublisher<Cat, NetworkError> {
+		return Fail(error: NetworkError.badURL(reason: "Method not implemented")).eraseToAnyPublisher()
+	}
+	
+	func fetchCats(limit: Int, skip: Int) -> AnyPublisher<[Cat], NetworkError> {
+		return Fail(error: NetworkError.badURL(reason: "Method not implemented")).eraseToAnyPublisher()
+	}
+	
+	func fetchCats(limit: Int, skip: Int, tags: [String]) -> AnyPublisher<[Cat], NetworkError> {
+		return Fail(error: NetworkError.badURL(reason: "Method not implemented")).eraseToAnyPublisher()
+	}
+	
+	func fetchTags() -> AnyPublisher<[String], NetworkError> {
+		return Fail(error: NetworkError.badURL(reason: "Method not implemented")).eraseToAnyPublisher()
+	}
+	
+	func cacheImage(for cat: Cat, data: Data, completion: @escaping () -> Void) {
+		completion()
+	}
 }
 
 class CatRepositoryImpl: CatRepository {
@@ -50,6 +79,53 @@ class CatRepositoryImpl: CatRepository {
 						})
 						.store(in: &self.cancellables)
 				}
+			}
+		}
+		.receive(on: DispatchQueue.main)
+		.eraseToAnyPublisher()
+	}
+	
+	func fetchCats(limit: Int, skip: Int, tags: [String]) -> AnyPublisher<[Cat], NetworkError> {
+		return Future<[Cat], NetworkError> { [weak self] promise in
+			DispatchQueue.global(qos: .background).sync {
+				guard let self = self else {
+					promise(.failure(.requestFailed(reason: "Unknown")))
+					return
+				}
+				
+				self.apiService.fetchCats(limit: limit, skip: skip, tags: tags)
+						.sink(receiveCompletion: { completion in
+							if case let .failure(error) = completion {
+								promise(.failure(error))
+							}
+						}, receiveValue: { cats in
+							self.saveCatsToCache(cats)
+							promise(.success(cats))
+						})
+						.store(in: &self.cancellables)
+			}
+		}
+		.receive(on: DispatchQueue.main)
+		.eraseToAnyPublisher()
+	}
+	
+	func fetchTags() -> AnyPublisher<[String], NetworkError> {
+		return Future<[String], NetworkError> { [weak self] promise in
+			DispatchQueue.global(qos: .background).sync {
+				guard let self = self else {
+					promise(.failure(.requestFailed(reason: "Unknown")))
+					return
+				}
+				
+				self.apiService.fetchTags()
+					.sink(receiveCompletion: { completion in
+						if case let .failure(error) = completion {
+							promise(.failure(error))
+						}
+					}, receiveValue: { cats in
+						promise(.success(cats))
+					})
+					.store(in: &self.cancellables)
 			}
 		}
 		.receive(on: DispatchQueue.main)
