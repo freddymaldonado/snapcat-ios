@@ -1,6 +1,6 @@
 # Snapcat
 
-![alt text](Banner-1.png)
+![alt text](Banner.png)
 
 Snapcat is a SwiftUI app showcasing the Cat as a Service (CaaS) API. It highlights iOS development skills, including API integration, SwiftUI, state management, Unit Testing and UI Testing. Snapcat uses a modular architecture, clean code principles, and the MVVM pattern with Combine for reactive programming.
 

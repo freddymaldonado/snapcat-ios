@@ -19,7 +19,6 @@ class CatListViewModel: CatListViewModelProtocol {
 	private var cancellables = Set<AnyCancellable>()
 	private let repository: CatRepository
 	
-
 	init(repository: CatRepository = AppRepository.shared) {
 		self.repository = repository
 		fetchTags()
