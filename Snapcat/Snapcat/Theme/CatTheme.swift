@@ -27,6 +27,9 @@ struct CatTheme: Equatable {
 	let tagOpacity: CGFloat
 	let tagBackgroundColor: Color
 	let tagFont: Font
+	let selectedTagOpacity: CGFloat
+	let selectedTagBackgroundColor: Color
+	let selectedTagFont: Font
 	let tagFontColor: Color
 	let iconSize: CGFloat
 	let mediaPlaceholderColor: Color
@@ -53,6 +56,9 @@ struct CatTheme: Equatable {
 		tagOpacity: 0.2,
 		tagBackgroundColor: Color(red: 106 / 255, green: 13 / 255, blue: 173 / 255),
 		tagFont: CatFont.ralewaySemiBold.font(size: 16, weight: .semibold),
+		selectedTagOpacity: 0.5,
+		selectedTagBackgroundColor: Color(red: 126 / 255, green: 33 / 255, blue: 203 / 255),
+		selectedTagFont: CatFont.ralewaySemiBold.font(size: 16, weight: .semibold),
 		tagFontColor: Color(red: 106 / 255, green: 13 / 255, blue: 173 / 255).lighten(by: 0.4),
 		iconSize: 20,
 		mediaPlaceholderColor: Color(red: 30 / 255, green: 30 / 255, blue: 30 / 255).lighten(by: 0.4),
@@ -80,6 +86,9 @@ struct CatTheme: Equatable {
 		tagOpacity: 0.2,
 		tagBackgroundColor: Color.green,
 		tagFont: CatFont.ralewaySemiBold.font(size: 16, weight: .semibold),
+		selectedTagOpacity: 0.5,
+		selectedTagBackgroundColor: Color(red: 0 / 255, green: 220 / 255, blue: 0 / 255),
+		selectedTagFont: CatFont.ralewaySemiBold.font(size: 16, weight: .semibold),
 		tagFontColor: Color.green.lighten(by: 0.4),
 		iconSize: 20,
 		mediaPlaceholderColor: Color(red: 30 / 255, green: 30 / 255, blue: 30 / 255),

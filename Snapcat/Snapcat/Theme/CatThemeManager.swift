@@ -144,6 +144,18 @@ class CatThemeManager: ObservableObject {
 	var tagFont: Font {
 		currentTheme.tagFont
 	}
+
+	var selectedTagOpacity: CGFloat {
+		currentTheme.selectedTagOpacity
+	}
+	
+	var selectedTagBackgroundColor: Color {
+		currentTheme.selectedTagBackgroundColor
+	}
+	
+	var selectedTagFont: Font {
+		currentTheme.selectedTagFont
+	}
 	
 	var tagFontColor: Color {
 		currentTheme.tagFontColor

@@ -31,6 +31,8 @@
 		B605B4E52C3CF870007A8F06 /* CatInfoRowViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605B4E42C3CF870007A8F06 /* CatInfoRowViewModelProtocol.swift */; };
 		B605B4E72C3CF87B007A8F06 /* CatContentViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605B4E62C3CF87B007A8F06 /* CatContentViewModelProtocol.swift */; };
 		B605B4E92C3CF885007A8F06 /* CatSettingsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605B4E82C3CF885007A8F06 /* CatSettingsViewModelProtocol.swift */; };
+		B6262BED2C4F36F500051A6C /* CatSearchTagViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6262BEC2C4F36F500051A6C /* CatSearchTagViewModel.swift */; };
+		B6262BEF2C4F371400051A6C /* CatSearchTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6262BEE2C4F371400051A6C /* CatSearchTagView.swift */; };
 		B6C2BE4A2C334EF700E4E28C /* SnapcatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C2BE492C334EF700E4E28C /* SnapcatApp.swift */; };
 		B6C2BE4C2C334EF700E4E28C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C2BE4B2C334EF700E4E28C /* ContentView.swift */; };
 		B6C2BE4E2C334EF900E4E28C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6C2BE4D2C334EF900E4E28C /* Assets.xcassets */; };
@@ -185,6 +187,8 @@
 		B605B4E42C3CF870007A8F06 /* CatInfoRowViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatInfoRowViewModelProtocol.swift; sourceTree = "<group>"; };
 		B605B4E62C3CF87B007A8F06 /* CatContentViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatContentViewModelProtocol.swift; sourceTree = "<group>"; };
 		B605B4E82C3CF885007A8F06 /* CatSettingsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatSettingsViewModelProtocol.swift; sourceTree = "<group>"; };
+		B6262BEC2C4F36F500051A6C /* CatSearchTagViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatSearchTagViewModel.swift; sourceTree = "<group>"; };
+		B6262BEE2C4F371400051A6C /* CatSearchTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatSearchTagView.swift; sourceTree = "<group>"; };
 		B6C2BE462C334EF700E4E28C /* Snapcat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snapcat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6C2BE492C334EF700E4E28C /* SnapcatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapcatApp.swift; sourceTree = "<group>"; };
 		B6C2BE4B2C334EF700E4E28C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -428,6 +432,7 @@
 				B605B4C52C3CE14D007A8F06 /* CatInfoRowViewModel.swift */,
 				B605B4C72C3CE26F007A8F06 /* CatContentViewModel.swift */,
 				B605B4C92C3CE542007A8F06 /* CatSettingsViewModel.swift */,
+				B6262BEC2C4F36F500051A6C /* CatSearchTagViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -486,6 +491,7 @@
 			children = (
 				B6C2BE822C335CD500E4E28C /* CatListView.swift */,
 				B6E55D112C348155005A68FF /* CatGridItem.swift */,
+				B6262BEE2C4F371400051A6C /* CatSearchTagView.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -741,6 +747,7 @@
 				B6E55D272C34D382005A68FF /* CatSettingsView.swift in Sources */,
 				B605B4C82C3CE26F007A8F06 /* CatContentViewModel.swift in Sources */,
 				B6C2BE9B2C3363A900E4E28C /* NetworkService.swift in Sources */,
+				B6262BEF2C4F371400051A6C /* CatSearchTagView.swift in Sources */,
 				B6F0F2832C3DB2AB00D47356 /* ColorExtensions.swift in Sources */,
 				B605B4E72C3CF87B007A8F06 /* CatContentViewModelProtocol.swift in Sources */,
 				B6C2BEA12C3364D400E4E28C /* AppRepository.swift in Sources */,
@@ -750,6 +757,7 @@
 				B605B4DF2C3CF854007A8F06 /* CatErrorViewModelProtocol.swift in Sources */,
 				B605B4BE2C3CDA80007A8F06 /* CatInfoViewModel.swift in Sources */,
 				B605B4CF2C3CF801007A8F06 /* CatListViewModelProtocol.swift in Sources */,
+				B6262BED2C4F36F500051A6C /* CatSearchTagViewModel.swift in Sources */,
 				B6E55D162C348822005A68FF /* CatMediaView.swift in Sources */,
 				B6C2BE4A2C334EF700E4E28C /* SnapcatApp.swift in Sources */,
 				B605B4C42C3CDDF2007A8F06 /* CatTagViewModel.swift in Sources */,

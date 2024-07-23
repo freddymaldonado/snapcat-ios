@@ -20,22 +20,17 @@ struct CatListView: View {
 				ScrollView {
 					VStack {
 						if let tags = viewModel.tags {
-							ScrollView(.horizontal) {
-								HStack {
-									ForEach(tags, id: \.self) { tag in
-										Button(tag) {
-											viewModel.search(tag: tag)
-										}
-										.padding(theme.basePadding)
-										.foregroundColor(theme.tagFontColor)
-										.background(theme.tagBackgroundColor.opacity(theme.tagOpacity))
-										.cornerRadius(theme.cornerRadius)
-										.buttonStyle(CatAnimatedButtonStyle())
+							CatSearchTagView(
+								viewModel: CatSearchTagViewModel(
+									tags: tags,
+									searchAction: { tag in
+										viewModel.search(tag: tag)
+									},
+									isTagSelectedAction: { tag in
+										viewModel.isTagSelected(tag)
 									}
-								}
-							}
-							.scrollIndicators(.hidden)
-							.padding(theme.basePadding * 2)
+								)
+							)
 						}
 						
 						if let error = viewModel.error {
@@ -64,15 +59,6 @@ struct CatListView: View {
 									}
 									.aspectRatio(1, contentMode: .fit)
 								}
-								
-								if viewModel.isLoading {
-									ProgressView()
-								} else {
-//									Text("Load More")
-//										.onAppear {
-//											viewModel.loadMoreCats()
-//										}
-								}
 							}
 							.padding()
 						}
@@ -98,4 +84,3 @@ struct CatListView: View {
 		.accentColor(theme.tintColor)
 	}
 }
-

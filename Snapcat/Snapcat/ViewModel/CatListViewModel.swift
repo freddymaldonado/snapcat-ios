@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import SwiftUI
 
-class CatListViewModel: CatListViewModelProtocol {
+class CatListViewModel: CatListViewModelProtocol, ObservableObject {
 	@Published var cats: [Cat] = []
 	@Published var tags: [String]? = []
 	@Published var isLoading = false
@@ -92,14 +92,11 @@ class CatListViewModel: CatListViewModelProtocol {
 	}
 	
 	func searchCats() {
-		isLoading = true
-		let jaja = self.search
 		repository.fetchCats(limit: 10, skip: 0, tags: self.search)
 			.receive(on: DispatchQueue.main)
 			.sink(receiveCompletion: { [weak self] completion in
 				guard let self = self else { return }
 				DispatchQueue.main.async {
-					self.isLoading = false
 					if case .failure(let error) = completion {
 						self.error = error
 					}
@@ -107,7 +104,6 @@ class CatListViewModel: CatListViewModelProtocol {
 			}, receiveValue: { [weak self] cats in
 				guard let self = self else { return }
 				DispatchQueue.main.async {
-					self.isLoading = false
 					self.cats = cats
 					if cats.isEmpty {
 						self.error = .requestFailed(reason: "Cats not found with the following tag combination: \(self.search)")
@@ -118,7 +114,15 @@ class CatListViewModel: CatListViewModelProtocol {
 	}
 	
 	func search(tag: String) {
-		self.search.append(tag)
+		if search.contains(tag) {
+			search.removeAll { $0 == tag }
+		} else {
+			search.append(tag)
+		}
 		searchCats()
+	}
+	
+	func isTagSelected(_ tag: String) -> Bool {
+		return search.contains(tag)
 	}
 }
